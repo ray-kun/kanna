@@ -1,0 +1,683 @@
+html *{
+    -webkit-font-smoothing: antialiased;
+}
+
+.title h3{
+    font-size: 25px !important;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    line-height: 1.4em !important;
+    font-weight: 300;
+}
+
+/* alerts */
+
+.alert {
+    border: 0;
+    border-radius: 0;
+    padding: 20px 15px !important;
+    line-height: 20px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.alert .alert-icon {
+    display: block;
+    float: left;
+    margin-right: 1.071rem;
+}
+
+.alert b {
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+}
+.alert .close {
+    color: #fff;
+    text-shadow: none;
+    opacity: .9;
+}
+.alert .close i {
+    font-size: 20px;
+}
+.alert .close:hover{
+    opacity: 1;
+    color: #fff;
+}
+.alert.alert-info {
+    background-color: #00cae3;
+    color: #fff;
+}
+
+.alert.alert-success {
+    background-color: #55b559;
+    color: #fff;
+}
+
+.alert.alert-warning {
+    background-color: #ff9e0f;
+    color: #fff;
+}
+
+.alert.alert-danger {
+    background-color: #f55145;
+    color: #fff;
+}
+
+.alert.alert-primary {
+    background-color: #a72abd;
+    color: #fff;
+}
+
+html body {
+    background-color: #eeeff1;
+    background-image: none;
+    color: #616161;
+    margin: 0px;
+}
+*:focus {
+    outline: none;
+}
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 1px 7px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    margin-bottom: 30px;
+    transition: all 0.15s;
+}
+.badge {
+    background: rgb(167 167 167 / 30%);
+    height: 45px;
+    width: 45px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.badge.clothing {
+    height: 45px;
+    width: 51px;
+    overflow: hidden;
+}
+.badge.badges {
+    height: 45px;
+    width: 51px;
+}
+.btn:focus,
+.btn:active {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.form-control:focus {
+    border-color: #6c757d;
+    box-shadow: inset 0 0px 0px;
+}
+header {
+    width: 100%;
+    height: 254px;
+    background: url(../images/login.png)
+    no-repeat right,
+    url("../images/bc_cast.png") center;
+    left: 0;
+    right: 0;
+    box-shadow: 0 46px 6px -46px rgba(0, 0, 0, 0.3),
+    0 -27px 46px -46px rgba(0, 0, 0, 0.3) inset;
+    border-bottom: 2px solid white;
+}
+.placeholder-glow .placeholder {
+    border-radius: 4px;
+}
+.navbar ul {
+    min-height: 75px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-right: 1px solid rgba(221, 219, 219, 0.56);
+}
+.navbar ul li {
+    padding: 0 36px;
+    border-left: 1px solid rgba(221, 219, 219, 0.56);
+    font-size: 13px;
+    color: #6d6c6c;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.container {
+    max-width: 1100px;
+}
+.container #left {
+    width: 370px;
+    float: left;
+}
+.container #right {
+    float: right;
+    width: 100% !important;
+    max-width: 840px;
+    width: calc(100% - 390px) !important;
+}
+
+@media (max-width: 750px) {
+    .container #left {
+        float: unset !important;
+    }
+
+    .container #right {
+        float: left !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        /* width: auto !important;    */
+        width: 100% !important;
+        max-width: 840px;
+    }
+    .container #left {
+        width: auto !important;
+    }
+
+    div.livenummer {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 19em !important;
+    }
+}
+.teampage {
+    height: 50px;
+    width: 320px;
+    display: inline-block;
+    border: 2px solid #fff;
+    background-color: #a86fee;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+    margin-top: 60px;
+}
+#userteams {
+    width: 231px;
+    height: 40px;
+    border-radius: 5px;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 40px;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: -51px;
+    margin-left: 85px;
+}
+#userranks {
+    width: 231px;
+    height: 33px;
+    text-overflow: ellipsis;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 40px;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: -33px;
+    margin-left: 88px;
+}
+
+div.radio {
+    margin-top: 90px;
+    position: absolute;
+}
+div.dj {
+    margin-top: -70px;
+    margin-left: -16px;
+}
+.circle {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #fff;
+    background-color: #a86fee;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    position: relative;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+div.air {
+    margin-top: 0px;
+    position: absolute;
+    background: transparent url(../images/On-AirSign.png) no-repeat scroll 0 0;
+    width: 122px;
+    height: 92px;
+}
+div.airr {
+    margin-top: 0px;
+    position: absolute;
+    background: transparent url(../images/On-AirSign.png) no-repeat scroll 0 0;
+    width: 122px;
+    height: 92px;
+    opacity: 0.2;
+}
+div.livedj {
+    position: absolute;
+    margin-left: 119px;
+    position: absolute;
+    bottom: 78px;
+
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding-bottom: 3px;
+    font-family: Trebuchet MS;
+    color: #fcfcfc;
+    font-weight: bold;
+}
+div.datum {
+    position: absolute;
+    margin-left: 127px;
+    position: absolute;
+    bottom: 57px;
+    /* text-align: right; */
+    display: block;
+    width: 196px;
+    font-size: 12px;
+    padding-bottom: 3px;
+    font-family: Trebuchet MS;
+    color: #fcfcfc;
+    font-weight: bold;
+}
+div.livenummer {
+    position: absolute;
+    margin-left: 129px;
+    position: absolute;
+    bottom: 33px;
+    /* text-align: right; */
+    display: block;
+    width: 500px;
+    font-size: 12px;
+    padding-bottom: 3px;
+    font-family: Trebuchet MS;
+    color: #fcfcfc;
+    font-weight: bold;
+}
+div.luister {
+    position: absolute;
+    margin-left: 117px;
+    position: absolute;
+    bottom: 8px;
+    /* text-align: right; */
+    display: block;
+    width: 196px;
+    font-size: 12px;
+    padding-bottom: 3px;
+    font-family: Trebuchet MS;
+    color: #fcfcfc;
+    font-weight: bold;
+}
+div.play {
+    background: transparent url(../images/buttons/play-new.png) no-repeat scroll 0
+    0;
+    height: 30px;
+    width: 20px;
+    margin-top: -110px;
+    position: absolute;
+    margin-left: 5px;
+}
+div.pauze {
+    background: transparent url(../images/buttons/pause-new.png) no-repeat scroll
+    0 0;
+    height: 30px;
+    width: 20px;
+    margin-top: -68px;
+    position: absolute;
+    margin-left: -7px;
+}
+div.min {
+    background: transparent url(../images/buttons/min-new.png) no-repeat scroll 0
+    0;
+    height: 13px;
+    width: 28px;
+    margin-top: -36px;
+    position: absolute;
+    margin-left: 4px;
+}
+div.plus {
+    background: transparent url(../images/buttons/plus-new.png) no-repeat scroll 0
+    0;
+    height: 22px;
+    width: 22px;
+    margin-top: -16px;
+    position: absolute;
+    margin-left: 34px;
+}
+div.nummer {
+    background: transparent url(../images/buttons/nummer-new.png) no-repeat scroll
+    0 0;
+    height: 30px;
+    width: 20px;
+    margin-top: -56px;
+    position: absolute;
+    margin-left: 106px;
+}
+div.luisteraar {
+    background: transparent url(../images/buttons/luisteraar-new2.png) no-repeat
+    scroll 0 0;
+    height: 30px;
+    width: 20px;
+    margin-top: -32px;
+    position: absolute;
+    margin-left: 95px;
+}
+.radio-container .radio-body {
+    background: #2195f3;
+    background: -webkit-linear-gradient(left top, #218df3, #2181f3);
+    background: -o-linear-gradient(top left, #4eee8a, #183e26);
+    background: -moz-linear-gradient(top left, #4eee8a, #183e26);
+    background: linear-gradient(to bottom right, #2183f3, #2182f3);
+    background-size: 100% 200%;
+    animation: background-scroll 7s alternate ease-in-out infinite;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+.radio-container .radio-body .wave-bars {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+.radio-container .radio-body .wave-bars .wave {
+    margin-top: 125px;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    float: left;
+    margin-right: 3px;
+    animation-delay: 2s;
+}
+.radio-container .radio-body .wave-bars .wave:first-child {
+    margin-left: 2px;
+}
+.radio-container .radio-body .wave-bars .wave:last-child {
+    margin-right: 0;
+}
+.radio-container .radio-body .wave-bars .wave.wave-1 {
+    animation: wave1 0.5s linear alternate infinite;
+}
+.radio-container .radio-body .wave-bars .wave.wave-2 {
+    animation: wave2 0.7s linear alternate infinite;
+}
+.radio-container .radio-body .wave-bars .wave.wave-3 {
+    animation: wave3 0.6s linear alternate infinite;
+}
+.radio-container .radio-body .wave-bars .wave.wave-4 {
+    animation: wave4 0.5s linear alternate infinite;
+}
+.radio-container .radio-body .wave-bars .wave.wave-5 {
+    animation: wave5 0.6s linear alternate infinite;
+}
+.radio-container .radio-body .wave-bars .wave.no-animation {
+    animation: stopwaves 1s linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@-webkit-keyframes background-scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+@-moz-keyframes background-scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+@keyframes background-scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+@-webkit-keyframes wave1 {
+    0% {
+        height: 10%;
+    }
+    33% {
+        height: 30%;
+    }
+    66% {
+        height: 15%;
+    }
+    100% {
+        height: 35%;
+    }
+}
+@-moz-keyframes wave1 {
+    0% {
+        height: 10%;
+    }
+    33% {
+        height: 30%;
+    }
+    66% {
+        height: 15%;
+    }
+    100% {
+        height: 35%;
+    }
+}
+@keyframes wave1 {
+    0% {
+        height: 10%;
+    }
+    33% {
+        height: 30%;
+    }
+    66% {
+        height: 15%;
+    }
+    100% {
+        height: 35%;
+    }
+}
+@-webkit-keyframes wave2 {
+    0% {
+        height: 40%;
+    }
+    33% {
+        height: 20%;
+    }
+    66% {
+        height: 40%;
+    }
+    100% {
+        height: 20%;
+    }
+}
+@-moz-keyframes wave2 {
+    0% {
+        height: 40%;
+    }
+    33% {
+        height: 20%;
+    }
+    66% {
+        height: 40%;
+    }
+    100% {
+        height: 20%;
+    }
+}
+@keyframes wave2 {
+    0% {
+        height: 40%;
+    }
+    33% {
+        height: 20%;
+    }
+    66% {
+        height: 40%;
+    }
+    100% {
+        height: 20%;
+    }
+}
+@-webkit-keyframes wave3 {
+    0% {
+        height: 30%;
+    }
+    33% {
+        height: 45%;
+    }
+    66% {
+        height: 30%;
+    }
+    100% {
+        height: 15%;
+    }
+}
+@-moz-keyframes wave3 {
+    0% {
+        height: 30%;
+    }
+    33% {
+        height: 45%;
+    }
+    66% {
+        height: 30%;
+    }
+    100% {
+        height: 15%;
+    }
+}
+@keyframes wave3 {
+    0% {
+        height: 45%;
+    }
+    33% {
+        height: 20%;
+    }
+    66% {
+        height: 30%;
+    }
+    100% {
+        height: 15%;
+    }
+}
+@-webkit-keyframes wave4 {
+    0% {
+        height: 30%;
+    }
+    33% {
+        height: 25%;
+    }
+    66% {
+        height: 45%;
+    }
+    100% {
+        height: 25%;
+    }
+}
+@-moz-keyframes wave4 {
+    0% {
+        height: 30%;
+    }
+    33% {
+        height: 25%;
+    }
+    66% {
+        height: 45%;
+    }
+    100% {
+        height: 25%;
+    }
+}
+@keyframes wave4 {
+    0% {
+        height: 30%;
+    }
+    33% {
+        height: 25%;
+    }
+    66% {
+        height: 45%;
+    }
+    100% {
+        height: 25%;
+    }
+}
+@-webkit-keyframes wave5 {
+    0% {
+        height: 20%;
+    }
+    33% {
+        height: 35%;
+    }
+    66% {
+        height: 15%;
+    }
+    100% {
+        height: 35%;
+    }
+}
+@-moz-keyframes wave5 {
+    0% {
+        height: 20%;
+    }
+    33% {
+        height: 35%;
+    }
+    66% {
+        height: 15%;
+    }
+    100% {
+        height: 35%;
+    }
+}
+@keyframes wave5 {
+    0% {
+        height: 20%;
+    }
+    33% {
+        height: 35%;
+    }
+    66% {
+        height: 15%;
+    }
+    100% {
+        height: 35%;
+    }
+}
+@keyframes stopwaves {
+    100% {
+        height: 3px;
+    }
+}
