@@ -1,116 +1,278 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.master')
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title')
+    Homepagina
+@endsection
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-
-    <title>Kanna</title>
-</head>
-
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Over ons</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Ons team</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Registreren</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-{{--<header>--}}
-{{--    <div class="container">--}}
-{{--        <div class="row" style="margin-left: 10px;">--}}
-{{--            <div id="statusLive" class="airr"></div>--}}
-{{--            <div class="col-md-7">--}}
-{{--                <div class="radio">--}}
-
-{{--                    <audio id="player" id="radio" autoplay style="width: 350px;" volume="20">--}}
-
-{{--                        <source src="https://listen.habbocast.nl/radio/8000/radio.mp3?cache=1665149507" type="audio/mpeg">--}}
-
-{{--                        Your browser does not support the audio element.--}}
-
-{{--                    </audio>--}}
-
-{{--                    <div id="statusArt" class="circle">--}}
-{{--                        <div id="statusDj" class="dj" style="background: transparent url('habbo-avatar-hier') no-repeat scroll 0px 0px; height: 182px; border-radius: 0% 0% 60% 60%; width: 129px;">--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="play" onclick="document.getElementById('player').play();$('.wave').removeClass('no-animation');">--}}
-{{--                    </div>--}}
-{{--                    <div class="pauze" onclick="document.getElementById('player').pause();waveAfterWave();"></div>--}}
-{{--                    <div class="min" onclick="document.getElementById('player').volume -= 0.1"></div>--}}
-{{--                    <div class="plus" onclick="document.getElementById('player').volume += 0.1"></div>--}}
-
-{{--                    <div class="nummer"></div>--}}
-{{--                    <div class="luisteraar"></div>--}}
-{{--                    <div class="livedj">--}}
-{{--                        <p class="card-text placeholder-glow"><span class="placeholder col-7"></span></p>--}}
-{{--                    </div>--}}
-{{--                    <div class="datum">Vrijdag 7 Oktober 2022</div>--}}
-{{--                    <div class="livenummer">--}}
-{{--                        <p class="card-text placeholder-glow"><span class="placeholder col-7"></span></p>--}}
-{{--                    </div>--}}
-{{--                    <div class="luister">--}}
-{{--                        <p class="card-text placeholder-glow"><span class="placeholder col-7"></span></p>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-4"><img src="assets/images/hc1.png" style="margin-top: 20px;"></div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--</header>--}}
-
-
+@section('content')
 
 <div class="container" style="margin-top: 50px;">
 
     <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Titel nieuwsbericht</h5>
-                    <p>Beschrijving</p>
+
+    <!--Profile Card 5-->
+    <div class="col-3 mt-4">
+        <div class="card profile-card-5">
+            <div class="card-img-block">
+                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                    <span class="badge bg-secondary float-end">Categorie</span>
+                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Titel nieuwsbericht</h5>
-                    <p>Beschrijving</p>
-                </div>
+            <div class="card-body pt-0">
+                <h5 class="card-title">Nieuwsbericht</h5>
+                <p class="card-text">Geschreven door Ryuk</p>
             </div>
         </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Titel nieuwsbericht</h5>
-                    <p>Beschrijving</p>
+    </div>
+    <div class="col-3 mt-4">
+        <div class="card profile-card-5">
+            <div class="card-img-block">
+                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                    <span class="badge bg-secondary float-end">Categorie</span>
+                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Titel nieuwsbericht</h5>
-                    <p>Beschrijving</p>
-                </div>
+            <div class="card-body pt-0">
+                <h5 class="card-title">Nieuwsbericht</h5>
+                <p class="card-text">Geschreven door Ryuk</p>
+
             </div>
         </div>
+    </div>
+    <div class="col-3 mt-4">
+        <div class="card profile-card-5">
+            <div class="card-img-block">
+                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                    <span class="badge bg-secondary float-end">Categorie</span>
+                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                </div>
+            </div>
+            <div class="card-body pt-0">
+                <h5 class="card-title">Nieuwsbericht</h5>
+                <p class="card-text">Geschreven door Ryuk</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-3 mt-4">
+        <div class="card profile-card-5">
+            <div class="card-img-block">
+                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                    <span class="badge bg-secondary float-end">Categorie</span>
+                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                </div>
+            </div>
+            <div class="card-body pt-0">
+                <h5 class="card-title">Nieuwsbericht</h5>
+                <p class="card-text">Geschreven door Ryuk</p>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="row">
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 mt-4">
+                            <div class="card profile-card-5">
+                                <div class="card-img-block">
+                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                                        <span class="badge bg-secondary float-end">Categorie</span>
+                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <h5 class="card-title">Nieuwsbericht</h5>
+                                    <p class="card-text">Geschreven door Ryuk</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Vorige</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Volgende</span>
+            </button>
+        </div>
+
+
     </div>
 
     <div class="row">
@@ -143,43 +305,5 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title" style="text-align: center">&copy; 2021 - 2022 Kanna. All rechten voorbehouden, Gemaakt met <icon style="color:pink;">♥</icon> door Ryuk
-                    </h5>
-                    <p style="text-align: center">Wij zijn niet verbonden aan, aanbevolen of gesponsord door of specifiek goedgekeurd door Sulake Corporation Oy of aan haar Gelieerde Ondernemingen. HD kan gebruikmaken van de handelsmerken en andere intellectuele eigendom van Habbo, zoals toegestaan volgens het Habbo Fansitebeleid.</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
-
-<!-- Optional JavaScript; choose one of the two! -->
-<!-- Option 1: Bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
-
-<!-- Option 2: Separate Popper and Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>
-<script>
-    var $settings = {
-        habbo_mission: "HabboCast-2xghj",
-        habbo_mission_lostpass: "HabboCast-sahii"
-    }
-</script>
-<script src="assets/js/habbocast.js?v=1665149507"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-</script>
-<script>
-    $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-</script>
-</body>
-</html>
+@endsection
