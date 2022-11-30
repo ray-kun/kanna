@@ -6,13 +6,13 @@
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">HD</a>
                     <ul class="dropdown-menu fade-up">
-                        <li><a class="dropdown-item" href="#">Ons team</a></li>
-                        <li><a class="dropdown-item" href="#">Vacatures</a></li>
+                        <li><a class="dropdown-item" href="{{ route('habboducket-team') }}">Ons team</a></li>
+                        <li><a class="dropdown-item" href="{{ route('habboducket-vacancies') }}">Vacatures</a></li>
                         <li><a class="dropdown-item" href="#">Statistieken</a></li>
                         <li><a class="dropdown-item" href="#">Badges</a></li>
                         <li><a class="dropdown-item" href="#">Duckets</a></li>
@@ -23,7 +23,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nieuws</a>
                     <ul class="dropdown-menu fade-up">
-                        <li><a class="dropdown-item" href="#">Laatste nieuws</a></li>
+                        <li><a class="dropdown-item" href="{{ route('news') }}">Laatste nieuws</a></li>
                         <li><a class="dropdown-item" href="#">Game</a></li>
                     </ul>
                 </li>
@@ -50,6 +50,7 @@
                     <ul class="dropdown-menu dropdown-menu-end fade-down">
                         <li><a class="dropdown-item" href="#">Inloggen</a></li>
                         <li><a class="dropdown-item" href="#">Registreren </a></li>
+                        <li><a class="dropdown-item" href="{{ route('eendenportaal') }}">Eendenportaal</a></li>
                     </ul>
                 </li>
             </ul>

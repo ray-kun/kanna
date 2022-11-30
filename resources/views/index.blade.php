@@ -20,8 +20,9 @@
                 </div>
             </div>
             <div class="card-body pt-0">
-                <h5 class="card-title">Nieuwsbericht</h5>
-                <p class="card-text">Geschreven door Ryuk</p>
+                <h5 class="card-title text-truncate">We zijn eindelijk goed teruggekeerd</h5>
+                <p class="card-text">Tijd voor een feestje!</p>
+                <p><small>Geschreven door Ryuk</small></p>
             </div>
         </div>
     </div>
@@ -34,23 +35,9 @@
                 </div>
             </div>
             <div class="card-body pt-0">
-                <h5 class="card-title">Nieuwsbericht</h5>
-                <p class="card-text">Geschreven door Ryuk</p>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-3 mt-4">
-        <div class="card profile-card-5">
-            <div class="card-img-block">
-                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                    <span class="badge bg-secondary float-end">Categorie</span>
-                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                </div>
-            </div>
-            <div class="card-body pt-0">
-                <h5 class="card-title">Nieuwsbericht</h5>
-                <p class="card-text">Geschreven door Ryuk</p>
+                <h5 class="card-title text-truncate">Game heeft nieuwe meubels toegevoegd</h5>
+                <p class="card-text">Tijd voor een feestje!</p>
+                <p><small>Geschreven door Ryuk</small></p>
 
             </div>
         </div>
@@ -64,215 +51,28 @@
                 </div>
             </div>
             <div class="card-body pt-0">
-                <h5 class="card-title">Nieuwsbericht</h5>
-                <p class="card-text">Geschreven door Ryuk</p>
-
+                <h5 class="card-title text-truncate">Dit is echt geweldig nieuws</h5>
+                <p class="card-text">Tijd voor een feestje!</p>
+                <p><small>Geschreven door Ryuk</small></p>
             </div>
         </div>
     </div>
-    </div>
-
-    <div class="row">
-
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 mt-4">
-                            <div class="card profile-card-5">
-                                <div class="card-img-block">
-                                    <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                                        <span class="badge bg-secondary float-end">Categorie</span>
-                                        <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                                    </div>
-                                </div>
-                                <div class="card-body pt-0">
-                                    <h5 class="card-title">Nieuwsbericht</h5>
-                                    <p class="card-text">Geschreven door Ryuk</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <div class="col-3 mt-4">
+        <div class="card profile-card-5">
+            <div class="card-img-block">
+                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                    <span class="badge bg-secondary float-end">Categorie</span>
+                    <span class="badge bg-secondary float-end me-1">31 jan 2022</span>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Vorige</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Volgende</span>
-            </button>
+            <div class="card-body pt-0">
+                <h5 class="card-title text-truncate">Wij gaan in december open, geweldig!</h5>
+                <div class="author-img"></div>
+                <p class="card-text">Tijd voor een feestje!</p>
+                <p><small>Geschreven door Ryuk</small></p>
+            </div>
         </div>
-
-
+    </div>
     </div>
 
     <div class="row">
