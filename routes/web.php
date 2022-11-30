@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\VacancyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +18,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('homepage');
+
+Route::get('habboducket/team', [TeamController::class, 'index'])->name('habboducket-team');
+
+Route::get('habboducket/vacancies', [VacancyController::class, 'index'])->name('habboducket-vacancies');
+
+Route::get('habboducket/news', [NewsController::class, 'index'])->name('news');
+
+Route::get('eendenportaal', function() {
+    return view('eendenportaal.index');
+})->name('eendenportaal');
+

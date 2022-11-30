@@ -769,3 +769,10 @@ div.luisteraar {
     background-color:#4E5E30;
     border-color:#4E5E30;
 }
+
+.author-img {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    float: right;
+}
