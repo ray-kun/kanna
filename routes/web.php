@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\AdminNewsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\VacancyController;
@@ -28,5 +29,9 @@ Route::get('habboducket/news', [NewsController::class, 'index'])->name('news');
 
 Route::get('eendenportaal', function() {
     return view('eendenportaal.index');
-})->name('eendenportaal');
+})->name('eendenportaal.index');
 
+Route::resource('eendenportaal/news', AdminNewsController::class)->names([
+    'index' => get_admin_name().'.news.index',
+    'create' => get_admin_name().'.news.create'
+]);
