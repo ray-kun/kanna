@@ -35,7 +35,7 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="email">Subtitel</label>
+                                        <label for="email">Korte omschrijving</label>
                                         <input type="email" placeholder="Wij gaan je vertellen waarom" class="form-control" id="email" name="email" value="{{ old('email') }}">
                                         @error('email')
                                         <span class="text-danger">{{ $message }}</span>
@@ -56,8 +56,8 @@
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="article editor">Bericht</label>
-                                        <textarea class="form-control" id="article editor" placeholder="Schrijf hier..." name="article">{{ old('email') }}</textarea>
+                                        <label for="article">Bericht</label>
+                                        <textarea class="form-control editor" id="article" placeholder="Schrijf hier..." name="article">{{ old('email') }}</textarea>
                                         @error('email')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
