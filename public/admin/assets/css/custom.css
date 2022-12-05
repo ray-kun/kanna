@@ -150,16 +150,8 @@ body {
     color: red;
 }
 
-a#fr-logo {
-    float: left;
-    outline: none;
-    display: none!important;
-}
-
-button#insertFiles-1.fr-command.fr-btn, button#markdown-1.fr-command.fr-btn,
-button#paragraphStyle-1.fr-command.fr-btn.fr-dropdown
-{
+.tox-statusbar__branding {
+    margin-left: 2ch;
     display: none;
 }
-
 
