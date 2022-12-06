@@ -48,8 +48,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Account </a>
                     <ul class="dropdown-menu dropdown-menu-end fade-down">
-                        <li><a class="dropdown-item" href="#">Inloggen</a></li>
-                        <li><a class="dropdown-item" href="#">Registreren </a></li>
+                        <li><a class="dropdown-item" href="{{ route('account.login')  }}">Inloggen</a></li>
+                        <li><a class="dropdown-item" href="{{ route('account.register') }}">Registreren </a></li>
                         <li><a class="dropdown-item" href="{{ route('eendenportaal.index') }}">Eendenportaal</a></li>
                     </ul>
                 </li>

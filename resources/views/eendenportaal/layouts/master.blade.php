@@ -11,14 +11,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.paddle.com/paddle/assets/css/animate.css" media="all">
     <link rel="stylesheet" type="text/css" href="https://cdn.paddle.com/paddle/assets/css/paddle.css" media="all">
 
-    <script src="https://cdn.tiny.cloud/1/dgkw4p3fk6vkp3yrsdlh5fsu9i9a6uovg5huu0jaz7oys9zz/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea.editor', // Replace this CSS selector to match the placeholder element for TinyMCE
-            plugins: 'code table lists',
-            toolbar: 'undo redo | formatselect| bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
-        });
-    </script>
+    <script src="https://cdn.tiny.cloud/1/dgkw4p3fk6vkp3yrsdlh5fsu9i9a6uovg5huu0jaz7oys9zz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    @yield('editor')
 </head>
 <body class="bg-gray-200">
 @include('eendenportaal.partials.header')

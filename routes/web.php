@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\admin\AdminNewsController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\VacancyController;
 use Illuminate\Support\Facades\Route;
@@ -25,7 +27,11 @@ Route::get('habboducket/team', [TeamController::class, 'index'])->name('habboduc
 
 Route::get('habboducket/vacancies', [VacancyController::class, 'index'])->name('habboducket-vacancies');
 
-Route::get('habboducket/news', [NewsController::class, 'index'])->name('news');
+Route::get('habboducket/news', [ArticleController::class, 'index'])->name('news');
+
+Route::get('habboducket/account/login', [SessionController::class, 'create'])->name('account.login');
+
+Route::get('habboducket/account/register', [RegisterController::class, 'create'])->name('account.register');
 
 Route::get('eendenportaal', function() {
     return view('eendenportaal.index');
