@@ -87,19 +87,7 @@
         <div class="col-12 col-sm-6 col-md-5 col-xl-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Inloggen op Kanna</h5>
-                    <p>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping"><img src="assets/images/icons/follow_oldclient.gif"></span>
-                        <input type="text" class="form-control" placeholder="Gebruikersnaam" id="signin_Username" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>
-                    <p>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping"><img src="assets/images/icons/new_13.gif"></span>
-                        <input type="password" class="form-control" id="signin_Password" placeholder="Wachtwoord" aria-label="Username" aria-describedby="addon-wrapping">
-                    </div>
-                    <button type="button" class="btn btn-success" onclick="$HabboCast.user.signIn();" style="margin-top: 15px;width: 140px;">Inloggen</button>
-                    <button type="button" class="btn btn-secondary" onclick="$HabboCast.user.register();" style="margin-top: 15px;width: 120px;">Registeren</button>
+                    <h5 class="card-title">Twitter</h5>
                 </div>
             </div>
         </div>

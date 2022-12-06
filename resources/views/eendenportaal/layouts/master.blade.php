@@ -12,15 +12,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.paddle.com/paddle/assets/css/paddle.css" media="all">
 
     <script src="https://cdn.tiny.cloud/1/dgkw4p3fk6vkp3yrsdlh5fsu9i9a6uovg5huu0jaz7oys9zz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea.editor', // Replace this CSS selector to match the placeholder element for TinyMCE
-            plugins: 'anchor autolink charmap codesample preview emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tableofcontents footnotes mergetags autocorrect',
-            toolbar: 'preview undo redo | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-            spellchecker_language: 'nl',
-            language: 'nl'
-        });
-    </script>
+
+    @yield('editor')
 </head>
 <body class="bg-gray-200">
 @include('eendenportaal.partials.header')
