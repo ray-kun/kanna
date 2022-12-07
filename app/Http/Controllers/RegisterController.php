@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRegisterRequest;
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class RegisterController extends Controller
@@ -33,9 +37,15 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRegisterRequest $request): RedirectResponse
     {
-        //
+        $user = User::make($request->validated());
+
+        $user->password = Hash::make($request->validated('password'));
+
+        $user->save();
+
+        return redirect()->route('account.login')->with('status', 'register-success');
     }
 
     /**

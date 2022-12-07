@@ -32,6 +32,7 @@ Route::get('habboducket/news', [ArticleController::class, 'index'])->name('news'
 Route::get('habboducket/account/login', [SessionController::class, 'create'])->name('account.login');
 
 Route::get('habboducket/account/register', [RegisterController::class, 'create'])->name('account.register');
+Route::post('habboducket/account/register', [RegisterController::class, 'store'])->name('account.register');
 
 Route::get('eendenportaal', function() {
     return view('eendenportaal.index');
