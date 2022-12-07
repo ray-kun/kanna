@@ -6,6 +6,7 @@ use App\Http\Requests\StoreRegisterRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
@@ -26,8 +27,11 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(): View
+    public function create(): RedirectResponse | View
     {
+        if(Auth::check()) {
+            return redirect()->route('homepage');
+        }
         return view('account.register.create');
     }
 

@@ -30,6 +30,9 @@ Route::get('habboducket/vacancies', [VacancyController::class, 'index'])->name('
 Route::get('habboducket/news', [ArticleController::class, 'index'])->name('news');
 
 Route::get('habboducket/account/login', [SessionController::class, 'create'])->name('account.login');
+Route::post('habboducket/account/login', [SessionController::class, 'store'])->name('account.login');
+
+Route::post('lucoa/logout', [SessionController::class, 'destroy'])->name('account.logout');
 
 Route::get('habboducket/account/register', [RegisterController::class, 'create'])->name('account.register');
 Route::post('habboducket/account/register', [RegisterController::class, 'store'])->name('account.register');

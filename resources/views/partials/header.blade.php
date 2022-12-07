@@ -1,3 +1,10 @@
+<div id="DuckBlue" class="me">
+    <div id="center">
+        <div class="container-ducklogo">
+            <div class="ducklogo"></div>
+        </div>
+    </div>
+</div>
 {{--<header>--}}
 {{--    <div class="container">--}}
 {{--        <div class="row" style="margin-left: 10px;">--}}

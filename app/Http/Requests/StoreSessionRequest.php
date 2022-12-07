@@ -4,9 +4,8 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRegisterRequest extends FormRequest
+class StoreSessionRequest extends FormRequest
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -15,9 +14,8 @@ class StoreRegisterRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => ['required', 'string', 'max:255'],
-            'password' => ['required', 'same:password_repeat', 'string', 'max:255'],
-            'password_repeat' => ['required'],
+            'username' => ['required'],
+            'password' => ['required'],
         ];
     }
 }

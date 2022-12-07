@@ -48,9 +48,19 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Account </a>
                     <ul class="dropdown-menu dropdown-menu-end fade-down">
+                        @guest
                         <li><a class="dropdown-item" href="{{ route('account.login')  }}">Inloggen</a></li>
                         <li><a class="dropdown-item" href="{{ route('account.register') }}">Registreren </a></li>
-                        <li><a class="dropdown-item" href="{{ route('eendenportaal.index') }}">Eendenportaal</a></li>
+                        @endguest
+
+                        @auth
+                                <li><a class="dropdown-item" href="{{ route('account.login')  }}">Mijn profiel</a></li>
+                                <li><a class="dropdown-item" href="{{ route('eendenportaal.index') }}">Eendenportaal</a></li>
+                                <form method="POST" action="{{ route('account.logout') }}">
+                                    @csrf
+                                    <li><button type="submit" class="dropdown-item"><span class="fas fa-sign-out-alt me-2"></span> Uitloggen</button></li>
+                                </form>
+                        @endauth
                     </ul>
                 </li>
             </ul>

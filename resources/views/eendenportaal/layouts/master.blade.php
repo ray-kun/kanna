@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('fontawesome/css/solid.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdn.paddle.com/paddle/assets/css/animate.css" media="all">
     <link rel="stylesheet" type="text/css" href="https://cdn.paddle.com/paddle/assets/css/paddle.css" media="all">
+    <link rel="stylesheet" type="text/css" href="https://cdn.paddle.com/paddle/assets/css/paddle.css" media="all">
 
     <script src="https://cdn.tiny.cloud/1/dgkw4p3fk6vkp3yrsdlh5fsu9i9a6uovg5huu0jaz7oys9zz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
