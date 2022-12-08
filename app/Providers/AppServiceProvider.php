@@ -29,7 +29,6 @@ class AppServiceProvider extends ServiceProvider
     {
 
         Gate::define('admin', function (User $user) {
-            dump($user->role_id);
             return $user->role_id === 2 ? Response::allow() : Response::denyAsNotFound();
         });
 
