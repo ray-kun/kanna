@@ -12,6 +12,22 @@
             <div class="col-12 col-sm-6 col-md-7 col-xl-8">
                 <div class="card">
                     <div class="card-body">
+                        @if($errors->hasAny('username', 'password'))
+                            <div class="alert alert-danger" role="alert">
+                                Gebruikersnaam en/of wachtwoord is verplicht!
+                            </div>
+                        @endif
+
+                        @if(session('status') === 'credentials-false')
+                            <div class="alert alert-danger" role="alert">
+                                Verkeerde gebruikersnaam en/of wachtwoord ingevuld!
+                            </div>
+                        @elseif(session('status') === 'user-exists-false')
+                            <div class="alert alert-danger" role="alert">
+                                Deze gebruiker bestaat niet!
+                            </div>
+                        @endif
+
                         <form action="{{ route('account.login') }}" method="post">
                             @csrf
                             <h5 class="card-title">Inloggen op Kanna</h5>
@@ -19,19 +35,13 @@
                             <span class="input-group-text" id="addon-wrapping">
                                 <img src="assets/images/icons/follow_oldclient.gif">
                             </span>
-                                <input type="text" name="username" class="form-control" placeholder="Gebruikersnaam" id="signin_Username" aria-label="Username" aria-describedby="addon-wrapping">
-                                @error('username')
-                                <span style="color: red">{{ $message }}</span>
-                                @enderror
+                                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Gebruikersnaam" id="username" aria-label="Username" aria-describedby="addon-wrapping">
                             </div>
                             <div class="input-group flex-nowrap mb-2">
                             <span class="input-group-text" id="addon-wrapping">
                                 <img src="assets/images/icons/new_13.gif">
                             </span>
-                                <input type="password" name="password" class="form-control" id="signin_Password" placeholder="Wachtwoord" aria-label="Username" aria-describedby="addon-wrapping">
-                                @error('password')
-                                <span style="color: red">{{ $message }}</span>
-                                @enderror
+                                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="Wachtwoord" aria-label="password" aria-describedby="addon-wrapping">
                             </div>
                             <input type="submit" class="btn btn-success" style="margin-top: 15px;width: 120px;" value="Inloggen">
                             <a href="{{ route('account.register') }}" class="btn btn-secondary" style="margin-top: 15px;width: 120px;">Registreren</a>

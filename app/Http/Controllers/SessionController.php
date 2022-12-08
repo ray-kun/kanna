@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreSessionRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -28,6 +29,7 @@ class SessionController extends Controller
      */
     public function create(): RedirectResponse | View
     {
+
         if(Auth::check()) {
             return redirect()->route('homepage');
         }
@@ -45,16 +47,22 @@ class SessionController extends Controller
      */
     public function store(StoreSessionRequest $request): RedirectResponse
     {
-        if(Auth::attempt($request->validated()))
-        {
-            session()->regenerate();
 
-            return redirect()->route('homepage');
+        $user = User::where('username', $request->input('username'))->first();
+
+        if(!is_null($user)) {
+            if(Auth::attempt($request->validated()))
+            {
+                session()->regenerate();
+
+                return redirect()->route('homepage')->with('status', 'login-success');
+            }
+
+            return redirect()->back()->with('status', 'credentials-false');
         }
 
-        return back()
-            ->withInput()
-            ->withErrors(['username' => 'E-mailadres is incorrect', 'password' => 'Wachtwoord is incorrect']);
+        return redirect()->back()->with('status', 'user-exists-false');
+
     }
 
     /**

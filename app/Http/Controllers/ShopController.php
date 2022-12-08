@@ -2,24 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreRegisterRequest;
-use App\Models\User;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
-class RegisterController extends Controller
+class ShopController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('account.shop.index');
     }
 
     /**
@@ -27,12 +22,9 @@ class RegisterController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(): RedirectResponse | View
+    public function create()
     {
-        if(Auth::check()) {
-            return redirect()->route('homepage');
-        }
-        return view('account.register.create');
+        //
     }
 
     /**
@@ -41,17 +33,9 @@ class RegisterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreRegisterRequest $request): RedirectResponse
+    public function store(Request $request)
     {
-        $user = User::make($request->validated());
-
-        $user->password = Hash::make($request->validated('password'));
-
-        $user->role_id = 1;
-
-        $user->save();
-
-        return redirect()->route('account.login')->with('status', 'register-success');
+        //
     }
 
     /**

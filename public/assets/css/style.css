@@ -92,6 +92,7 @@ html body {
     color: #616161;
     margin: 0px;
     font-family: 'Titillium Web', serif;
+    overflow-y:scroll;
 }
 
 *:focus {
@@ -785,7 +786,7 @@ div.luisteraar {
 }
 
 #DuckBlue {
-    background-color: #25B8EE;
+    background-color: #c363c1;
     background-image: url(../images/header_temporary.png), url(../images/hotel.gif), url(../images/buildings.png), url(../images/bg_grad.png);
     background-position: left bottom,right -70px bottom,bottom,left;
     background-repeat: no-repeat,no-repeat,repeat-x,repeat-x;
@@ -845,4 +846,32 @@ div.luisteraar {
 
 #DuckBlue a.button:hover {
     font-weight: 600;
+}
+
+.navbar-nav {
+    padding: 5px 0 5px 0;
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-lg ul.navbar-nav  li.nav-item {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    .navbar-expand-lg ul.navbar-nav  li.nav-item {
+        border-left: 1px solid red;
+    }
+
+    .navbar-expand-lg ul.navbar-nav li.nav-item:last-child  {
+        border-right: 1px solid red;
+    }
+}
+
+.nav-icon {
+    display: block;
+    height: 50px;
+    width: 50px;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
 }

@@ -8,6 +8,12 @@
 
 <div class="container" style="margin-top: 50px;">
 
+    @if(session('status') === 'login-success')
+        <div class="alert alert-success" role="alert">
+            Je bent succesvol ingelogd, welkom!
+        </div>
+    @endif
+
     <div class="row">
 
     <!--Profile Card 5-->

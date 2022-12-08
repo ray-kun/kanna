@@ -9,7 +9,7 @@
                     <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">HD</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_extra.gif') }}')"></div> Kanna</a>
                     <ul class="dropdown-menu fade-up">
                         <li><a class="dropdown-item" href="{{ route('habboducket-team') }}">Ons team</a></li>
                         <li><a class="dropdown-item" href="{{ route('habboducket-vacancies') }}">Vacatures</a></li>
@@ -46,16 +46,30 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"> Account </a>
+                    @guest
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_extra.gif') }}')"></div> Account
+                    </a>
+                    @endguest
+
+                    @auth
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                       <div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_extra.gif') }}')"></div>
+                        {{ Auth::user()->username }}
+                    </a>
+                    @endauth
                     <ul class="dropdown-menu dropdown-menu-end fade-down">
                         @guest
                         <li><a class="dropdown-item" href="{{ route('account.login')  }}">Inloggen</a></li>
                         <li><a class="dropdown-item" href="{{ route('account.register') }}">Registreren </a></li>
                         @endguest
-
                         @auth
-                                <li><a class="dropdown-item" href="{{ route('account.login')  }}">Mijn profiel</a></li>
+                                <li><a class="dropdown-item" href="{{ route('profile.user', Auth::user()->username) }}">Mijn profiel</a></li>
+                                <li><a class="dropdown-item" href="{{ route('account.settings') }}">Instellingen</a></li>
+                                <li><a class="dropdown-item" href="{{ route('account.shop') }}">Winkel</a></li>
+                                @can('admin')
                                 <li><a class="dropdown-item" href="{{ route('eendenportaal.index') }}">Eendenportaal</a></li>
+                                @endcan
                                 <form method="POST" action="{{ route('account.logout') }}">
                                     @csrf
                                     <li><button type="submit" class="dropdown-item"><span class="fas fa-sign-out-alt me-2"></span> Uitloggen</button></li>
