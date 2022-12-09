@@ -6,10 +6,14 @@
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+                    <a class="nav-link" href="{{ route('homepage') }}">
+                        <div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_home.png') }}')"></div> Home
+                    </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_extra.gif') }}')"></div> Kanna</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_ducket.png') }}')"></div> Kanna
+                    </a>
                     <ul class="dropdown-menu fade-up">
                         <li><a class="dropdown-item" href="{{ route('habboducket-team') }}">Ons team</a></li>
                         <li><a class="dropdown-item" href="{{ route('habboducket-vacancies') }}">Vacatures</a></li>
@@ -21,14 +25,18 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Nieuws</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_news.png') }}')"></div> Nieuws
+                    </a>
                     <ul class="dropdown-menu fade-up">
                         <li><a class="dropdown-item" href="{{ route('news') }}">Laatste nieuws</a></li>
                         <li><a class="dropdown-item" href="#">Game</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Game</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_hotel_v2.png') }}')"></div> Game
+                    </a>
                     <ul class="dropdown-menu fade-up">
                         <li><a class="dropdown-item" href="#">Over game</a></li>
                         <li><a class="dropdown-item" href="#">Laatste badges</a></li>
@@ -36,7 +44,9 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Fancenter</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        <div class="nav-icon" style="background-image: url('{{ asset('assets/images/icon_extra.gif') }}')"></div> Fancenter
+                    </a>
                     <ul class="dropdown-menu fade-up">
                         <li><a class="dropdown-item" href="#">Avatar generator</a></li>
                         <li><a class="dropdown-item" href="#">Font generator</a></li>

@@ -14,6 +14,36 @@
                     <div class="card-body">
                         <h5 class="card-title">Eigenaar</h5>
                         <p>Zorgt dat alles op rolletjes loopt.</p>
+                        <div id="staff">
+                            <div id="staff_avatar"><img class="staffimg" src="https://www.habbo.nl/habbo-imaging/avatarimage?user=raydevinlr&amp;size=b&amp;gesture=sml&amp;action=std&amp;direction=2&amp;head_direction=3"></div>
+                            <div id="staff_naam"><a href="profiel/'.$admin->naam.'">raydevinlr</a></div>
+                            <div id="staff_rank">Eigenaar</div>
+                        </div>
+                        <div id="staff">
+                            <div id="staff_avatar"><img class="staffimg" src="https://www.habbo.nl/habbo-imaging/avatarimage?user=raydevinlr&amp;size=b&amp;gesture=sml&amp;action=std&amp;direction=2&amp;head_direction=3"></div>
+                            <div id="staff_naam"><a href="profiel/'.$admin->naam.'">raydevinlr</a></div>
+                            <div id="staff_rank">Eigenaar</div>
+                        </div>
+                        <div id="staff">
+                            <div id="staff_avatar"><img class="staffimg" src="https://www.habbo.nl/habbo-imaging/avatarimage?user=raydevinlr&amp;size=b&amp;gesture=sml&amp;action=std&amp;direction=2&amp;head_direction=3"></div>
+                            <div id="staff_naam"><a href="profiel/'.$admin->naam.'">raydevinlr</a></div>
+                            <div id="staff_rank">Eigenaar</div>
+                        </div>
+                        <div id="staff">
+                            <div id="staff_avatar"><img class="staffimg" src="https://www.habbo.nl/habbo-imaging/avatarimage?user=raydevinlr&amp;size=b&amp;gesture=sml&amp;action=std&amp;direction=2&amp;head_direction=3"></div>
+                            <div id="staff_naam"><a href="profiel/'.$admin->naam.'">raydevinlr</a></div>
+                            <div id="staff_rank">Eigenaar</div>
+                        </div>
+                        <div id="staff">
+                            <div id="staff_avatar"><img class="staffimg" src="https://www.habbo.nl/habbo-imaging/avatarimage?user=raydevinlr&amp;size=b&amp;gesture=sml&amp;action=std&amp;direction=2&amp;head_direction=3"></div>
+                            <div id="staff_naam"><a href="profiel/'.$admin->naam.'">raydevinlr</a></div>
+                            <div id="staff_rank">Eigenaar</div>
+                        </div>
+                        <div id="staff">
+                            <div id="staff_avatar"><img class="staffimg" src="https://www.habbo.nl/habbo-imaging/avatarimage?user=raydevinlr&amp;size=b&amp;gesture=sml&amp;action=std&amp;direction=2&amp;head_direction=3"></div>
+                            <div id="staff_naam"><a href="profiel/'.$admin->naam.'">raydevinlr</a></div>
+                            <div id="staff_rank">Eigenaar</div>
+                        </div>
                     </div>
                 </div>
                 <div class="card">

@@ -859,11 +859,11 @@ div.luisteraar {
     }
 
     .navbar-expand-lg ul.navbar-nav  li.nav-item {
-        border-left: 1px solid red;
+        border-left: 1px solid #E9E8E9;
     }
 
     .navbar-expand-lg ul.navbar-nav li.nav-item:last-child  {
-        border-right: 1px solid red;
+        border-right: 1px solid #E9E8E9;
     }
 }
 
@@ -874,4 +874,36 @@ div.luisteraar {
     margin-bottom: 5px;
     background-repeat: no-repeat;
     background-position: center bottom;
+}
+
+#staff {
+    border-radius: 4px;
+    display: inline-block;
+    border: solid 1px #D8D8D8;
+    padding: 5px;
+    background-color: #EAF8FF;
+    overflow: hidden;
+    width: 219px;
+    margin: 1.5px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    height: 70px;
+    margin-top: 10px;
+}
+
+.staffimg {
+    margin-top: -25px;
+    margin-left: -10px;
+    margin-right: 5px;
+    float: left;
+}
+
+#staff_naam a{
+    text-decoration: none;
+    color: #DE442E;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+#staff_rank {
+    color: #999;
 }
