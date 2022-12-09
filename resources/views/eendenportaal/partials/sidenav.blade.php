@@ -5,11 +5,8 @@
                 <img src="https://i0.wp.com/tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png" class="card-img-top rounded-circle border-white" alt="Bonnie Green Portrait">
             </div>
 
-            <span class="h5 my-0 my-lg-3 me-3 me-lg-0">Goedeavond, raydevinlr!</span>
-            <form method="POST" action="#">
-                @csrf
-                <button type="submit" class="btn btn-gray-300 btn-xs"><span class="fas fa-sign-out-alt me-2"></span> Uitloggen</button>
-            </form>
+            <span class="h5 mt-4">Goedeavond, raydevinlr!</span>
+            <span class="h6">Eigenaar</span>
         </div>
 
         <nav class="sidebar">
@@ -28,7 +25,7 @@
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Nieuwsreporter <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.news.index') }}">Alle nieuwsberichten</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.index') }}">Alle nieuwsberichten</a></li>
                         <li><a class="nav-link" href="#">Nieuwsbericht plaatsen</a></li>
                     </ul>
                 </li>

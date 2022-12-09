@@ -13,7 +13,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Account instellingen</h5>
-                        <p>Zorgt dat alles op rolletjes loopt.</p>
+                        <p>In dit gedeelte kan jij je account instellingen aanpassen.</p>
                     </div>
                 </div>
             </div>

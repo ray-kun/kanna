@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\AccountController;
-use App\Http\Controllers\admin\AdminNewsController;
+use App\Http\Controllers\admin\AdminArticleController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -40,11 +40,12 @@ Route::get('account/settings', [AccountController::class, 'index'])->name('accou
 
 Route::get('account/settings/profile', [ProfileController::class, 'create'])->name('account.settings.profile');
 
-Route::get('account/settings/password', [AccountController::class, 'create'])->name('account.settings.password');
+Route::get('account/settings/password', [AccountController::class, 'edit'])->name('account.settings.password');
+Route::post('account/settings/password', [AccountController::class, 'update'])->name('account.settings.password');
 
 Route::get('account/shop', [ShopController::class, 'index'])->name('account.shop');
 
-Route::post('lucoa/logout', [SessionController::class, 'destroy'])->name('account.logout');
+Route::post('account/logout', [SessionController::class, 'destroy'])->name('account.logout');
 
 Route::get('account/register', [RegisterController::class, 'create'])->name('account.register');
 Route::post('account/register', [RegisterController::class, 'store'])->name('account.register');
@@ -58,9 +59,10 @@ Route::middleware('can:admin')->name(get_admin_name().'.')->group(function () {
         return view('eendenportaal.index');
     })->name('index');
 
-    Route::resource('eendenportaal/nieuws', AdminNewsController::class)->names([
-        'index' => 'news.index',
-        'create' => 'news.create'
+    Route::resource('eendenportaal/artikelen', AdminArticleController::class)->names([
+        'index' => 'articles.index',
+        'create' => 'articles.create',
+        'store' => 'articles.store',
     ]);
 
 });

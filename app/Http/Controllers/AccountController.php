@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdatePasswordRequest;
 use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
 class AccountController extends Controller
@@ -27,18 +30,18 @@ class AccountController extends Controller
      */
     public function create(): View
     {
-        return view('account.settings.password.create');
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -58,21 +61,32 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(): View
     {
-        //
+        return view('account.settings.password.edit');
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return string
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePasswordRequest $request): RedirectResponse
     {
-        //
+        $user = User::find(Auth::id());
+
+        if(Hash::check($request->validated('current_password'), $user->password)) {
+            $user->update([
+                'password' => Hash::make($request->validated('new_password')),
+            ]);
+
+            return redirect()->route('account.settings.password')->with('status', 'password_edit_success');
+        }
+
+        return redirect()->route('account.settings.password')->with('status', 'password_edit_failed');
+
     }
 
     /**

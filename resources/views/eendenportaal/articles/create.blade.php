@@ -20,15 +20,13 @@
                             </div>
 
                             <div class="card-body">
-                                <form action="#" method="POST">
-
+                                <form action="{{ route(get_admin_name().'.articles.store') }}" method="POST">
                                     @csrf
-
                                     <div class="row">
                                         <div class="mb-4">
                                             <label for="name">Titel</label>
-                                            <input type="text" placeholder="HabboDucket is cool" class="form-control text-gray" id="name" name="name" value="{{ old('name') }}">
-                                            @error('name')
+                                            <input type="text" placeholder="HabboDucket is cool" class="form-control text-gray" id="title" name="title" value="{{ old('title') }}">
+                                            @error('title')
                                             <span class="text-danger">{{ $message }}</span>
                                             @enderror
                                         </div>
@@ -36,29 +34,29 @@
 
                                     <div class="mb-4">
                                         <label for="email">Korte omschrijving</label>
-                                        <input type="email" placeholder="Wij gaan je vertellen waarom" class="form-control" id="email" name="email" value="{{ old('email') }}">
-                                        @error('email')
+                                        <input type="text" placeholder="Wij gaan je vertellen waarom" class="form-control" id="short_description" name="short_description" value="{{ old('short_description') }}">
+                                        @error('short_description')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="email">Categorie</label>
-                                        <select name="cars" id="cars" class="form-control">
+                                        <label for="category">Categorie</label>
+                                        <select name="category" id="category" class="form-control">
                                             <option value="" selected disabled>Selecteer een categorie &raquo; </option>
-                                            <option value="volvo">Habbo</option>
-                                            <option value="saab">HabboDucket</option>
-                                            <option value="mercedes">Overig</option>
+                                            <option value="1">Habbo</option>
+                                            <option value="2">HabboDucket</option>
+                                            <option value="3">Overig</option>
                                         </select>
-                                        @error('email')
+                                        @error('category')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
 
                                     <div class="mb-4">
-                                        <label for="article">Bericht</label>
-                                        <textarea class="form-control editor" id="article" placeholder="Schrijf hier..." name="article">{{ old('email') }}</textarea>
-                                        @error('email')
+                                        <label for="body">Bericht</label>
+                                        <textarea class="form-control editor" id="body" placeholder="Schrijf hier..." name="body">{{ old('body') }}</textarea>
+                                        @error('body')
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -66,7 +64,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <button class="btn btn-primary btn-orange mt-2 animate-up-2" type="submit">
-                                                Maak artikel aan
+                                                Aanmaken
                                             </button>
                                         </div>
                                     </div>

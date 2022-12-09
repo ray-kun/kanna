@@ -3,10 +3,16 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\StoreArticleRequest;
+use App\Models\admin\Article;
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
-class AdminNewsController extends Controller
+class AdminArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +21,10 @@ class AdminNewsController extends Controller
      */
     public function index(): View
     {
-        return view(get_admin_name().'.news.index');
+        $articles = Article::latest()->get();
+
+        return view(get_admin_name().'.articles.index',
+            ['articles' => $articles]);
     }
 
     /**
@@ -25,7 +34,7 @@ class AdminNewsController extends Controller
      */
     public function create(): View
     {
-        return view(get_admin_name().'.news.create');
+        return view(get_admin_name().'.articles.create');
     }
 
     /**
@@ -34,9 +43,19 @@ class AdminNewsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request): RedirectResponse
     {
-        //
+        $article = Article::make($request->validated());
+
+        $article->user_id = Auth::id();
+
+        $article->updated_by = Auth::id();
+
+        $article->status = 1;
+
+        $article->save();
+
+        return redirect()->route(get_admin_name().'.articles.index')->with('status', 'success');
     }
 
     /**

@@ -47,4 +47,26 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, \Exception|Throwable $exception)
+    {
+        if ($this->isHttpException($exception)) {
+
+            if (request()->is('eendenportaal/*')) {
+                if ($exception->getStatusCode() == 404) {
+                    return response()->view('eendenportaal.errors.' . '404', [], 404);
+                }
+            }
+            else
+            {
+                if ($exception->getStatusCode() == 404) {
+                    return response()->view('errors.' . '404', [], 404);
+                }
+            }
+
+
+        }
+
+        return parent::render($request, $exception);
+    }
 }
