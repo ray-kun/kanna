@@ -3,17 +3,20 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\EditArticleRequest;
 use App\Http\Requests\admin\StoreArticleRequest;
-use App\Models\admin\Article;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use App\Models\admin\Article;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AdminArticleController extends Controller
 {
+
+    protected string $model = Article::class;
     /**
      * Display a listing of the resource.
      *
@@ -61,12 +64,12 @@ class AdminArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Article $article
+     * @return View
      */
-    public function show($id)
+    public function show(Article $article): View
     {
-        //
+        return view(get_admin_name().'.articles.show', ['article' => $article]);
     }
 
     /**
@@ -75,9 +78,9 @@ class AdminArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $article): View
     {
-        //
+        return view(get_admin_name().'.articles.edit', ['article' => $article]);
     }
 
     /**
@@ -87,9 +90,12 @@ class AdminArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditArticleRequest $request, Article $article): RedirectResponse
     {
-        //
+
+        $article->update($request->validated());
+
+        return redirect()->route(get_admin_name().'.articles.index')->with('status', 'edit_success');
     }
 
     /**

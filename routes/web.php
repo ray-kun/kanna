@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\admin\AdminArticleController;
+use App\Http\Controllers\admin\user\UserArticleController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -54,15 +55,25 @@ Route::get('profile/{username}', [ProfileController::class, 'show'])->name('prof
 
 Route::middleware('can:admin')->name(get_admin_name().'.')->group(function () {
 
-
-    Route::get('eendenportaal', function() {
-        return view('eendenportaal.index');
+    Route::get(get_admin_name(), function() {
+        return view(get_admin_name().'.index');
     })->name('index');
 
-    Route::resource('eendenportaal/artikelen', AdminArticleController::class)->names([
+    Route::resource(get_admin_name().'/artikelen', AdminArticleController::class)->names([
         'index' => 'articles.index',
         'create' => 'articles.create',
         'store' => 'articles.store',
+        'show' => 'articles.show',
+        'edit' => 'articles.edit',
+        'update' => 'articles.update',
+    ])->parameters([
+        'artikelen' => 'article'
+    ]);
+
+    Route::resource(get_admin_name().'/mijn/artikelen', UserArticleController::class)->names([
+        'index' => 'articles.user.index',
+    ])->parameters([
+        'artikelen' => 'article'
     ]);
 
 });

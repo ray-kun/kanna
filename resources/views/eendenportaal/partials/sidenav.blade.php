@@ -25,8 +25,9 @@
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Nieuwsreporter <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.index') }}">Alle nieuwsberichten</a></li>
-                        <li><a class="nav-link" href="#">Nieuwsbericht plaatsen</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.create') }}">Artikel plaatsen</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.user.index') }}">Mijn artikelen</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.index') }}">Alle artikelen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
