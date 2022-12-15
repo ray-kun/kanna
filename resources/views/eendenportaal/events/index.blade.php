@@ -85,7 +85,7 @@
                                             </div>
                                             <a href="#">
                                                 <h2 class="h5">Event titel</h2>
-                                                <p>Korte beschrijving</p>
+                                                <p>van 19:00 tot 20:00</p>
                                             </a>
                                             <div class="col d-flex ps-0">
                                                 <span @class(['font-small me-3', 'text-success' => 1, 'text-danger' => !1])>
@@ -93,8 +93,8 @@
                                                    Actief
                                                 </span>
                                                 <span class="text-muted font-small me-3">
-                                                    <i class="fa-solid fa-clock me-1"></i>
-                                                    van 19:00 tot 20:00
+                                                    <i class="fa-solid fa-trophy-star me-1"></i>
+                                                    5 credits
                                                 </span>
                                                 <a class="font-small text-dark" href="./messages.html">
                                                     <i class="fa-solid fa-user me-1"></i> raydevinlr
