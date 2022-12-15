@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\admin\AdminArticleController;
+use App\Http\Controllers\admin\AdminEventController;
 use App\Http\Controllers\admin\user\UserArticleController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
@@ -68,6 +69,10 @@ Route::middleware('can:admin')->name(get_admin_name().'.')->group(function () {
         'update' => 'articles.update',
     ])->parameters([
         'artikelen' => 'article'
+    ]);
+
+    Route::resource(get_admin_name().'/evenementen', AdminEventController::class)->names([
+        'index' => 'events.index',
     ]);
 
     Route::resource(get_admin_name().'/mijn/artikelen', UserArticleController::class)->names([

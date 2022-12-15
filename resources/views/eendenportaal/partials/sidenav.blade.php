@@ -33,8 +33,9 @@
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Event <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="#">Alle events</a></li>
-                        <li><a class="nav-link" href="#">Event toevoegen</a></li>
+                        <li><a class="nav-link" href="#">Event plaatsen</a></li>
+                        <li><a class="nav-link" href="#">Mijn evenementen</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.index') }}">Alle events</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
