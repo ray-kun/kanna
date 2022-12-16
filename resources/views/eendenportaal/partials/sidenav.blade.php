@@ -35,6 +35,7 @@
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="#">Event plaatsen</a></li>
                         <li><a class="nav-link" href="#">Mijn evenementen</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.schedule') }}">Rooster</a></li>
                         <li><a class="nav-link" href="{{ route(get_admin_name().'.events.index') }}">Alle events</a></li>
                     </ul>
                 </li>

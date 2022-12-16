@@ -71,9 +71,14 @@ Route::middleware('can:admin')->name(get_admin_name().'.')->group(function () {
         'artikelen' => 'article'
     ]);
 
+    Route::get(get_admin_name().'/evenementen/rooster', [AdminEventController::class, 'schedule'])->name('events.schedule');
+
     Route::resource(get_admin_name().'/evenementen', AdminEventController::class)->names([
         'index' => 'events.index',
+        'create' => 'events.create',
+        'store' => 'events.store',
     ]);
+
 
     Route::resource(get_admin_name().'/mijn/artikelen', UserArticleController::class)->names([
         'index' => 'articles.user.index',

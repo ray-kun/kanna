@@ -26,3 +26,19 @@ document.addEventListener("DOMContentLoaded", function(){
     }) // forEach
 });
 // DOMContentLoaded  end
+
+document.getElementById("creditsSwitch").onclick = function() {
+    document.getElementById('credits').style.display = this.checked ? "block" : "none";
+}
+
+document.getElementById("furniSwitch").onclick = function() {
+    document.getElementById('furni').style.display = this.checked ? "block" : "none";
+}
+
+document.getElementById("coinsSwitch").onclick = function() {
+    document.getElementById('coins').style.display = this.checked ? "block" : "none";
+}
+
+document.getElementById("badgeSwitch").onclick = function() {
+    document.getElementById('badge').style.display = this.checked ? "block" : "none";
+}

@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\StoreEventRequest;
+use App\Models\admin\Event;
+use Carbon\Carbon;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AdminEventController extends Controller
@@ -15,7 +20,9 @@ class AdminEventController extends Controller
      */
     public function index(): View
     {
-        return view(get_admin_name().'.events.index');
+        $events = Event::latest()->get();
+
+        return view(get_admin_name().'.events.index', ['events' => $events]);
     }
 
     /**
@@ -23,9 +30,9 @@ class AdminEventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view(get_admin_name().'.events.create');
     }
 
     /**
@@ -34,9 +41,19 @@ class AdminEventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEventRequest $request): RedirectResponse
     {
-        //
+        $event = Event::make($request->validated());
+
+        $event->user_id = Auth::id();
+
+        $event->updated_by = Auth::id();
+
+        $event->status = 1;
+
+        $event->save();
+
+        return redirect()->route(get_admin_name().'.events.index')->with('status', 'success');
     }
 
     /**
@@ -47,7 +64,7 @@ class AdminEventController extends Controller
      */
     public function show($id)
     {
-        //
+        abort(404);
     }
 
     /**
@@ -83,4 +100,28 @@ class AdminEventController extends Controller
     {
         //
     }
+
+    public function schedule()
+    {
+
+        $start = strtotime('00:00');
+        $end   = strtotime('23:00');
+
+        while ($start <= $end) {
+
+            // Increment Start date
+
+            // Set dates to display
+            $date1 = $start;
+            $date2 = $start + (60*60);
+
+            echo date('H:i',$date1) . " - " . date('H:i',$date2) . '<br>';
+            $start += (60*60);
+            
+        }
+
+
+        return view(get_admin_name().'.events.schedule');
+    }
+
 }

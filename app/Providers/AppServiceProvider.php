@@ -38,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
             'create' => 'nieuw',
             'edit' => 'wijzig',
             'show' => 'toon',
+            'schedule' => 'rooster',
         ]);
     }
 }
