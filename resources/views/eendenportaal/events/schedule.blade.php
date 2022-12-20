@@ -36,28 +36,8 @@
                                 <table class="table table-hover">
                                     <tbody>
                                     <tr>
-                                        <th scope="row"><i class="fa-solid fa-clock me-1"></i> 00:00 - 01:00</th>
+                                        <th scope="row"><i class="fa-solid fa-clock me-1"></i></th>
                                         <td><i class="fa-solid fa-gamepad-modern me-1"></i> Eenden bankspel</td>
-                                        <td><i class="fa-solid fa-user me-1"></i> raydevinlr</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><i class="fa-solid fa-clock me-1"></i> 01:00 - 02:00</th>
-                                        <td><i class="fa-solid fa-gamepad-modern me-1"></i> Stoelendans</td>
-                                        <td><i class="fa-solid fa-user me-1"></i> raydevinlr</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row"><i class="fa-solid fa-clock me-1"></i> 02:00 - 03:00</th>
-                                        <td><i class="fa-solid fa-gamepad-modern me-1"></i> Koelkastspel</td>
-                                        <td><i class="fa-solid fa-user me-1"></i> raydevinlr</td>
-                                    </tr>
-                                    <tr class="text-success">
-                                        <td><i class="fa-solid fa-clock me-1"></i> 03:00 - 04:00</td>
-                                        <td><i class="fa-solid fa-circle-check me-1"></i> Beschikbaar</td>
-                                        <td><i class="fa-solid fa-calendar-check me-1"></i> Rooster in &raquo;</td>
-                                    </tr>
-                                    <tr class="text-danger">
-                                        <td><i class="fa-solid fa-clock me-1"></i> 04:00 - 05:00</td>
-                                        <td><i class="fa-solid fa-circle-xmark me-1"></i>Gereserveerd</td>
                                         <td><i class="fa-solid fa-user me-1"></i> raydevinlr</td>
                                     </tr>
                                     </tbody>

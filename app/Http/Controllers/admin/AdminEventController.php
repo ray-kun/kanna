@@ -103,23 +103,9 @@ class AdminEventController extends Controller
 
     public function schedule()
     {
+        $times = get_time_slot('60', '00:00AM', '23:00PM');
 
-        $start = strtotime('00:00');
-        $end   = strtotime('23:00');
-
-        while ($start <= $end) {
-
-            // Increment Start date
-
-            // Set dates to display
-            $date1 = $start;
-            $date2 = $start + (60*60);
-
-            echo date('H:i',$date1) . " - " . date('H:i',$date2) . '<br>';
-            $start += (60*60);
-            
-        }
-
+        dd($times);
 
         return view(get_admin_name().'.events.schedule');
     }
