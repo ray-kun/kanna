@@ -5,21 +5,23 @@
                 <img src="https://i0.wp.com/tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png" class="card-img-top rounded-circle border-white" alt="Bonnie Green Portrait">
             </div>
 
-            <span class="h5 mt-4">Goedeavond, raydevinlr!</span>
+            <span class="h5 mt-4">Goedemorgen, {{ \Illuminate\Support\Facades\Auth::user()->username }}!</span>
             <span class="h6">Eigenaar</span>
         </div>
 
         <nav class="sidebar">
             <ul class="nav flex-column" id="nav_accordion">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route(strtolower(config('app.admin_name')).'.index') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ route(get_admin_name().'.index') }}">Dashboard</a>
                 </li>
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Beheerder <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="#">Alle nieuwsberichten</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.index') }}">Alle artikelen</a></li>
                         <li><a class="nav-link" href="#">Nieuwsbericht beheer</a></li>
-                        <li><a class="nav-link" href="#">Submenu item 3</a> </li>
+                        <li><a class="nav-link" href="#">Categorieën beheren</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.index') }}">Alle events</a></li>
+                        <li><a class="nav-link" href="#">Evenementen beheer</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
@@ -27,16 +29,14 @@
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.create') }}">Artikel plaatsen</a></li>
                         <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.user.index') }}">Mijn artikelen</a></li>
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.index') }}">Alle artikelen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Event <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="#">Event plaatsen</a></li>
-                        <li><a class="nav-link" href="#">Mijn evenementen</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.create') }}">Event plaatsen</a></li>
+                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.user.index') }}">Mijn evenementen</a></li>
                         <li><a class="nav-link" href="{{ route(get_admin_name().'.events.schedule') }}">Rooster</a></li>
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.index') }}">Alle events</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
@@ -44,8 +44,6 @@
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="#">Gebruiker verbannen</a></li>
                         <li><a class="nav-link" href="#">IP ban</a></li>
-                        <li><a class="nav-link" href="#">Profiel logs</a></li>
-                        <li><a class="nav-link" href="#">Commentaar logs</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
@@ -54,6 +52,14 @@
                         <li><a class="nav-link" href="#">Website instellingen</a></li>
                         <li><a class="nav-link" href="#">Thema veranderen</a></li>
                         <li><a class="nav-link" href="#">Versie beheer</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-submenu">
+                    <a class="nav-link" href="#">Logs <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <ul class="submenu collapse">
+                        <li><a class="nav-link" href="#">Profiel logs</a></li>
+                        <li><a class="nav-link" href="#">Gastenboek logs</a></li>
+                        <li><a class="nav-link" href="#">Commentaar logs</a></li>
                     </ul>
                 </li>
             </ul>

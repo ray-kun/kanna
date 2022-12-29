@@ -1,39 +1,34 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\admin\user;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\admin\StoreEventRequest;
 use App\Models\admin\Event;
-use Carbon\Carbon;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\View\View;
 
-class AdminEventController extends Controller
+class UserEventController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\View\View
+     * @return View
      */
     public function index(): View
     {
-        $events = Event::latest()->get();
+        $events = Event::where('user_id', Auth::id())->latest()->get();
 
-        return view(get_admin_name().'.events.index', ['events' => $events]);
+        return view(get_admin_name().'.events.user.index', ['events' => $events]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(): View
+    public function create()
     {
-        return view(get_admin_name().'.events.create');
+        //
     }
 
     /**
@@ -42,19 +37,9 @@ class AdminEventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEventRequest $request): RedirectResponse
+    public function store(Request $request)
     {
-        $event = Event::make($request->validated());
-
-        $event->user_id = Auth::id();
-
-        $event->updated_by = Auth::id();
-
-        $event->status = 1;
-
-        $event->save();
-
-        return redirect()->route(get_admin_name().'.events.index')->with('status', 'success');
+        //
     }
 
     /**
@@ -65,7 +50,7 @@ class AdminEventController extends Controller
      */
     public function show($id)
     {
-        abort(404);
+        //
     }
 
     /**
@@ -101,17 +86,4 @@ class AdminEventController extends Controller
     {
         //
     }
-
-    /**
-     * @throws \Exception
-     */
-    public function schedule()
-    {
-        $times = get_time_slot('60', '12:00AM', '11:00PM');
-
-        dd($times);
-
-        return view(get_admin_name().'.events.schedule');
-    }
-
 }

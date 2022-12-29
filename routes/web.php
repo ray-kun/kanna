@@ -4,6 +4,7 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\admin\AdminArticleController;
 use App\Http\Controllers\admin\AdminEventController;
 use App\Http\Controllers\admin\user\UserArticleController;
+use App\Http\Controllers\admin\user\UserEventController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -84,6 +85,12 @@ Route::middleware('can:admin')->name(get_admin_name().'.')->group(function () {
         'index' => 'articles.user.index',
     ])->parameters([
         'artikelen' => 'article'
+    ]);
+
+    Route::resource(get_admin_name().'/mijn/evenementen', UserEventController::class)->names([
+        'index' => 'events.user.index',
+    ])->parameters([
+        'evenement' => 'event'
     ]);
 
 });
