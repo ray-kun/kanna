@@ -783,6 +783,11 @@ div.luisteraar {
     margin-bottom: 0.5rem;
     color: #c363c1;
     font-weight: 600;
+    font-size: 16px;
+}
+
+p {
+    font-size: 14px;
 }
 
 #DuckBlue {
