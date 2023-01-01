@@ -14,7 +14,7 @@ class VacancyController extends Controller
      */
     public function index(): View
     {
-        return view('habboducket.vacancies.index');
+        return view('site.habboducket.vacancies.index');
     }
 
     /**

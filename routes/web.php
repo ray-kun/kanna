@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('site.index');
 })->name('homepage');
 
 Route::get('habboducket/team', [TeamController::class, 'index'])->name('habboducket-team');
@@ -39,6 +39,11 @@ Route::get('news', [ArticleController::class, 'index'])->name('news');
 Route::get('account/login', [SessionController::class, 'create'])->name('account.login');
 Route::post('account/login', [SessionController::class, 'store'])->name('account.login');
 
+Route::get('account/register', [RegisterController::class, 'create'])->name('account.register');
+Route::post('account/register', [RegisterController::class, 'store'])->name('account.register');
+
+Route::post('account/logout', [SessionController::class, 'destroy'])->name('account.logout');
+
 Route::get('account/settings', [AccountController::class, 'index'])->name('account.settings');
 
 Route::get('account/settings/profile', [ProfileController::class, 'create'])->name('account.settings.profile');
@@ -48,20 +53,15 @@ Route::post('account/settings/password', [AccountController::class, 'update'])->
 
 Route::get('account/shop', [ShopController::class, 'index'])->name('account.shop');
 
-Route::post('account/logout', [SessionController::class, 'destroy'])->name('account.logout');
-
-Route::get('account/register', [RegisterController::class, 'create'])->name('account.register');
-Route::post('account/register', [RegisterController::class, 'store'])->name('account.register');
-
 Route::get('profile/{username}', [ProfileController::class, 'show'])->name('profile.user');
 
-Route::middleware('can:admin')->name(get_admin_name().'.')->group(function () {
+Route::middleware('can:admin')->name('admin.')->group(function () {
 
-    Route::get(get_admin_name(), function() {
-        return view(get_admin_name().'.index');
+    Route::get('/eendenportaal', function() {
+        return view('admin.index');
     })->name('index');
 
-    Route::resource(get_admin_name().'/artikelen', AdminArticleController::class)->names([
+    Route::resource('eendenportaal/beheer/artikelen', AdminArticleController::class)->names([
         'index' => 'articles.index',
         'create' => 'articles.create',
         'store' => 'articles.store',
@@ -72,22 +72,27 @@ Route::middleware('can:admin')->name(get_admin_name().'.')->group(function () {
         'artikelen' => 'article'
     ]);
 
-    Route::get(get_admin_name().'/evenementen/rooster', [AdminEventController::class, 'schedule'])->name('events.schedule');
+    Route::get('eendenportaal/evenementen/rooster', [AdminEventController::class, 'schedule'])->name('events.schedule');
 
-    Route::resource(get_admin_name().'/evenementen', AdminEventController::class)->names([
+    Route::resource('eendenportaal/evenementen', AdminEventController::class)->names([
         'index' => 'events.index',
         'create' => 'events.create',
         'store' => 'events.store',
     ]);
 
 
-    Route::resource(get_admin_name().'/mijn/artikelen', UserArticleController::class)->names([
+    Route::resource('eendenportaal/mijn/artikelen', UserArticleController::class)->names([
         'index' => 'articles.user.index',
+        'create' => 'articles.create',
+        'store' => 'articles.store',
+        'show' => 'articles.show',
+        'edit' => 'articles.edit',
+        'update' => 'articles.update',
     ])->parameters([
         'artikelen' => 'article'
     ]);
 
-    Route::resource(get_admin_name().'/mijn/evenementen', UserEventController::class)->names([
+    Route::resource('eendenportaal/mijn/evenementen', UserEventController::class)->names([
         'index' => 'events.user.index',
     ])->parameters([
         'evenement' => 'event'

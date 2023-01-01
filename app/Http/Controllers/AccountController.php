@@ -20,7 +20,7 @@ class AccountController extends Controller
     public function index(): View
     {
         $user = User::find(Auth::id());
-        return view('account.settings.index', ['user' => $user]);
+        return view('site.account.settings.index', ['user' => $user]);
     }
 
     /**
@@ -63,7 +63,7 @@ class AccountController extends Controller
      */
     public function edit(): View
     {
-        return view('account.settings.password.edit');
+        return view('site.account.settings.password.edit');
     }
 
     /**

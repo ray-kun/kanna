@@ -32,7 +32,7 @@ class RegisterController extends Controller
         if(Auth::check()) {
             return redirect()->route('homepage');
         }
-        return view('account.register.create');
+        return view('site.account.register.create');
     }
 
     /**

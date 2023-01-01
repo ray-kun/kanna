@@ -14,7 +14,7 @@ class TeamController extends Controller
      */
     public function index(): View
     {
-        return view('habboducket.team.index');
+        return view('site.habboducket.team.index');
     }
 
     /**

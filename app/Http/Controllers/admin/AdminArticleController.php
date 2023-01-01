@@ -26,7 +26,7 @@ class AdminArticleController extends Controller
     {
         $articles = Article::latest()->get();
 
-        return view(get_admin_name().'.articles.index',
+        return view('admin.articles.index',
             ['articles' => $articles]);
     }
 
@@ -37,7 +37,7 @@ class AdminArticleController extends Controller
      */
     public function create(): View
     {
-        return view(get_admin_name().'.articles.create');
+        return view('admin.articles.create');
     }
 
     /**
@@ -58,7 +58,7 @@ class AdminArticleController extends Controller
 
         $article->save();
 
-        return redirect()->route(get_admin_name().'.articles.index')->with('status', 'success');
+        return redirect()->route('admin.articles.index')->with('status', 'success');
     }
 
     /**
@@ -69,7 +69,7 @@ class AdminArticleController extends Controller
      */
     public function show(Article $article): View
     {
-        return view(get_admin_name().'.articles.show', ['article' => $article]);
+        return view('admin.articles.show', ['article' => $article]);
     }
 
     /**
@@ -80,7 +80,7 @@ class AdminArticleController extends Controller
      */
     public function edit(Article $article): View
     {
-        return view(get_admin_name().'.articles.edit', ['article' => $article]);
+        return view('admin.articles.edit', ['article' => $article]);
     }
 
     /**
@@ -95,7 +95,7 @@ class AdminArticleController extends Controller
 
         $article->update($request->validated());
 
-        return redirect()->route(get_admin_name().'.articles.index')->with('status', 'edit_success');
+        return redirect()->route('admin.articles.index')->with('status', 'edit_success');
     }
 
     /**

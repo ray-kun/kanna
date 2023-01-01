@@ -26,7 +26,7 @@ class ProfileController extends Controller
      */
     public function create(): View
     {
-        return view('account.settings.profile.create');
+        return view('site.account.settings.profile.create');
     }
 
     /**
@@ -55,7 +55,7 @@ class ProfileController extends Controller
         $user = User::where('username', $username)->first();
 
         if(!is_null($user)) {
-            return view('profile.show', ['user' => $user]);
+            return view('site.profile.show', ['user' => $user]);
         }
 
         abort(404);

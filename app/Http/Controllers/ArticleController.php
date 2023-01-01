@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index(): View
     {
-        return view('news.index');
+        return view('site.news.index');
     }
 
     /**

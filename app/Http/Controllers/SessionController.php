@@ -34,7 +34,7 @@ class SessionController extends Controller
             return redirect()->route('homepage');
         }
 
-        return view('account.login.create');
+        return view('site.account.login.create');
 
 
     }

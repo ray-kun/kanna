@@ -14,7 +14,7 @@ class ShopController extends Controller
      */
     public function index(): View
     {
-        return view('account.shop.index');
+        return view('site.account.shop.index');
     }
 
     /**
