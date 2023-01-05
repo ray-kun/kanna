@@ -54,15 +54,15 @@ class Handler extends ExceptionHandler
 
             if (request()->is('eendenportaal/*')) {
                 if ($exception->getStatusCode() == 403) {
-                    return response()->view('eendenportaal.errors.' . '403', [], 403);
+                    return response()->view('admin.errors.' . '403', [], 403);
                 } elseif ($exception->getStatusCode() == 404) {
-                    return response()->view('eendenportaal.errors.' . '404', [], 404);
+                    return response()->view('admin.errors.' . '404', [], 404);
                 }
             } else {
                 if ($exception->getStatusCode() == 403) {
-                    return response()->view('errors.' . '403', [], 403);
+                    return response()->view('site.errors.' . '403', [], 403);
                 } elseif ($exception->getStatusCode() == 404) {
-                    return response()->view('errors.' . '404', [], 404);
+                    return response()->view('site.errors.' . '404', [], 404);
                 }
             }
 

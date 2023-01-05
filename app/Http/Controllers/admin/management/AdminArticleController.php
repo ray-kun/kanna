@@ -1,22 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\admin\management;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\EditArticleRequest;
 use App\Http\Requests\admin\StoreArticleRequest;
-use App\Models\User;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use App\Models\admin\Article;
-use Illuminate\Support\Carbon;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class AdminArticleController extends Controller
 {
-
-    protected string $model = Article::class;
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +21,7 @@ class AdminArticleController extends Controller
     {
         $articles = Article::latest()->get();
 
-        return view('admin.articles.index',
+        return view('admin.management.articles.index',
             ['articles' => $articles]);
     }
 
@@ -37,7 +32,7 @@ class AdminArticleController extends Controller
      */
     public function create(): View
     {
-        return view('admin.articles.create');
+        return view('admin.user.articles.create');
     }
 
     /**
@@ -69,7 +64,7 @@ class AdminArticleController extends Controller
      */
     public function show(Article $article): View
     {
-        return view('admin.articles.show', ['article' => $article]);
+        return view('admin.management.articles.show', ['article' => $article]);
     }
 
     /**
@@ -107,5 +102,12 @@ class AdminArticleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function overview(): View
+    {
+        $articles = Article::latest()->get();
+
+        return view('admin.management.articles.overview', ['articles' => $articles]);
     }
 }

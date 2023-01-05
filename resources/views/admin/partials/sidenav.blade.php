@@ -12,31 +12,31 @@
         <nav class="sidebar">
             <ul class="nav flex-column" id="nav_accordion">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route(get_admin_name().'.index') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ route('admin.index') }}">Dashboard</a>
                 </li>
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Beheerder <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.index') }}">Alle artikelen</a></li>
-                        <li><a class="nav-link" href="#">Nieuwsbericht beheer</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.articles.management.index') }}">Alle artikelen</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.articles.management.overview') }}">Nieuwsbericht beheer</a></li>
                         <li><a class="nav-link" href="#">Categorieën beheren</a></li>
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.index') }}">Alle events</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.events.index') }}">Alle events</a></li>
                         <li><a class="nav-link" href="#">Evenementen beheer</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Nieuwsreporter <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.create') }}">Artikel plaatsen</a></li>
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.articles.user.index') }}">Mijn artikelen</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.articles.user.create') }}">Artikel plaatsen</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.articles.user.index') }}">Mijn artikelen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
                     <a class="nav-link" href="#">Event <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.create') }}">Event plaatsen</a></li>
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.user.index') }}">Mijn evenementen</a></li>
-                        <li><a class="nav-link" href="{{ route(get_admin_name().'.events.schedule') }}">Rooster</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.events.create') }}">Event plaatsen</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.events.user.index') }}">Mijn evenementen</a></li>
+                        <li><a class="nav-link" href="{{ route('admin.events.schedule') }}">Rooster</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">

@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\AccountController;
-use App\Http\Controllers\admin\AdminArticleController;
-use App\Http\Controllers\admin\AdminEventController;
+use App\Http\Controllers\admin\management\AdminArticleController;
+use App\Http\Controllers\admin\management\AdminEventController;
 use App\Http\Controllers\admin\user\UserArticleController;
 use App\Http\Controllers\admin\user\UserEventController;
 use App\Http\Controllers\ArticleController;
@@ -12,7 +12,6 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\VacancyController;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,13 +60,15 @@ Route::middleware('can:admin')->name('admin.')->group(function () {
         return view('admin.index');
     })->name('index');
 
+    Route::get('eendenportaal/beheer/artikelen/overzicht', [AdminArticleController::class, 'overview'])->name('articles.management.overview');
+
     Route::resource('eendenportaal/beheer/artikelen', AdminArticleController::class)->names([
-        'index' => 'articles.index',
-        'create' => 'articles.create',
-        'store' => 'articles.store',
-        'show' => 'articles.show',
-        'edit' => 'articles.edit',
-        'update' => 'articles.update',
+        'index' => 'articles.management.index',
+        'create' => 'articles.management.create',
+        'store' => 'articles.management.store',
+        'show' => 'articles.management.show',
+        'edit' => 'articles.management.edit',
+        'update' => 'articles.management.update',
     ])->parameters([
         'artikelen' => 'article'
     ]);
@@ -83,9 +84,9 @@ Route::middleware('can:admin')->name('admin.')->group(function () {
 
     Route::resource('eendenportaal/mijn/artikelen', UserArticleController::class)->names([
         'index' => 'articles.user.index',
-        'create' => 'articles.create',
-        'store' => 'articles.store',
-        'show' => 'articles.show',
+        'create' => 'articles.user.create',
+        'store' => 'articles.user.store',
+        'show' => 'articles.user.show',
         'edit' => 'articles.edit',
         'update' => 'articles.update',
     ])->parameters([

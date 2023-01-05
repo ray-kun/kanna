@@ -78,7 +78,7 @@
                                 <li><a class="dropdown-item" href="{{ route('account.settings') }}">Instellingen</a></li>
                                 <li><a class="dropdown-item" href="{{ route('account.shop') }}">Winkel</a></li>
                                 @can('admin')
-                                <li><a class="dropdown-item" href="{{ route(get_admin_name().'.index') }}">Eendenportaal</a></li>
+                                <li><a class="dropdown-item" href="{{ route('admin.index') }}">Eendenportaal</a></li>
                                 @endcan
                                 <form method="POST" action="{{ route('account.logout') }}">
                                     @csrf

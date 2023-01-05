@@ -1,4 +1,4 @@
-@extends('eendenportaal.layouts.master')
+@extends('admin.layouts.master')
 
 @section('title')
     Nieuwsberichten
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('eendenportaal/partials/sidenav')
+            @include('admin.partials.sidenav')
             <div class="col-12 col-lg-8">
                 <div class="row justify-content-center">
                     <div class="col-12">
@@ -30,7 +30,7 @@
 
 
                         <div class="d-grid">
-                            <a href="{{ route(get_admin_name().'.articles.create') }}" class="btn btn-outline-secondary mb-4 py-3">
+                            <a href="{{ route('admin.articles.user.create') }}" class="btn btn-outline-secondary mb-4 py-3">
                                 <span class="me-2"><span class="fas fa-plus"></span></span>Nieuwe artikel toevoegen
                             </a>
                         </div>
@@ -65,9 +65,9 @@
                                                         </button>
 
                                                         <div class="dropdown-menu py-0">
-                                                            <a class="dropdown-item rounded-top" href="{{ route(get_admin_name().'.articles.show', $article) }}">
+                                                            <a class="dropdown-item rounded-top" href="{{ route('admin.articles.user.show', $article) }}">
                                                                 <i class="fa-solid fa-eye"></i> Bekijk artikel</a>
-                                                            <a class="dropdown-item" href="{{ route(get_admin_name().'.articles.edit', $article) }}">
+                                                            <a class="dropdown-item" href="#">
                                                                 <i class="fa-solid fa-pen-to-square"></i> Bewerken
                                                             </a>
                                                             <form class="mb-0" method="POST"

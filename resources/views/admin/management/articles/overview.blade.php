@@ -15,7 +15,7 @@
                 @if(session('status') === 'success')
                     <div class="alert alert-success" id="alert-success" role="alert">
                         <h4 class="alert-heading">Nieuwsbericht is toegevoegd <i class="fa-solid fa-party-horn fa-l"></i> </h4>
-                        <p>Kwak-tas-tisch, je artikel is toegevoegd en moet nog goedgekeurd worden door een nieuwsbeheerder</p>
+                        <p>Kwak-tas-tisch, de artikel is goedgekeurd en op de website geplaatst!</p>
                     </div>
                 @elseif(session('status') === 'failed')
                     <div class="alert alert-success" role="alert">
@@ -32,7 +32,7 @@
                         <div class="card border-gray-300">
                             <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
                                 <div class="d-block">
-                                    <h2 class="h5 mb-0">Reviews</h2>
+                                    <h2 class="h5 mb-0">Nieuwsberichten overzicht</h2>
                                 </div>
                             </div>
 
@@ -57,9 +57,7 @@
                                             <td>{{ $article->created_at }}</td>
                                             <td>{{ $article->status }}</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a>
+                                                <a href="{{ route('admin.articles.management.show', $article) }}" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach

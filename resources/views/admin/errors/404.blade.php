@@ -1,4 +1,4 @@
-@extends('eendenportaal.layouts.master')
+@extends('admin.layouts.master')
 
 @section('title')
     404 niet gevonden
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('eendenportaal/partials/sidenav')
+            @include('admin.partials.sidenav')
 
             <div class="col-12 col-lg-8">
                 <div class="col-12 col-sm-12 mb-4">

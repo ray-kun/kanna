@@ -49,8 +49,42 @@
                     <div class="col-12 col-sm-6 mb-4">
                         <div class="card border-gray-300">
                             <div class="card-body d-block d-md-flex align-items-center">
-                                <div class="icon icon-shape icon-md icon-shape-danger rounded-circle me-3 mb-4 mb-md-0">
-                                    <i class="fa-solid fa-circle-exclamation fa-2xl"></i>
+                                <div class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
+                                    <i class="fa-solid fa-piggy-bank fa-2xl"></i>
+                                </div>
+
+                                <div>
+                                    <span class="d-block h6 fw-normal">Nieuwsberichten</span>
+                                    <h5 class="h3 fw-bold mb-1">0</h5>
+                                    <div class="small mt-2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 mb-4">
+                        <div class="card border-gray-300">
+                            <div class="card-body d-block d-md-flex align-items-center">
+                                <div class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
+                                    <i class="fa-solid fa-photo-film fa-2xl"></i>
+                                </div>
+
+                                <div>
+                                    <span class="d-block h6 fw-normal">Evenementen</span>
+                                    <h5 class="h3 fw-bold mb-1">0</h5>
+                                    <div class="small mt-2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 mb-4">
+                        <div class="card border-gray-300">
+                            <div class="card-body d-block d-md-flex align-items-center">
+                                <div class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
+                                    <i class="fa-solid fa-star fa-2xl"></i>
                                 </div>
 
                                 <div>
@@ -63,78 +97,76 @@
                         </div>
                     </div>
 
-
-
-                    <div class="col-12 col-md-6 mb-4">
+                    <div class="col-12 col-sm-6 mb-4">
                         <div class="card border-gray-300">
-                            <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
-
-                                <div class="d-block">
-                                    <div class="h6 fw-normal text-gray mb-2">Nieuwsberichten</div>
-                                    <h2 class="h3">0</h2>
-                                    <div class="small mt-2">
-                                        <span class="fw-bold">5 nieuwste weergegeven</span>
-                                    </div>
-                                </div>
-                                <div class="d-block ms-auto">
-                                    <a href="#" class="btn btn-orange btn-sm">Alles tonen</a>
-                                </div>
-                            </div>
-
-                            <div class="card-body p-3">
-
-                                <table class="table table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Titel</th>
-                                        <th scope="col">Auteur</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <tr>
-                                            <td class="text-truncate" style="max-width: 125px;">Dit is een lange titel nog langer dan lang</td>
-                                            <td>raydevinlr</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                            <div class="card-body">
+                                <h2 class="h5 mb-4">Laatst ingelogd</h2>
+                                <ul class="list-unstyled mb-lc-0">
+                                    <li class="d-flex align-items-center mb-4">
+                                        <div class="flex-shrink-0">
+                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                        </div>
+                                        <div class="flex-grow-1 mb-lc-0 ps-3">
+                                            <p class="h6 text-primary mb-0">raydevinlr</p>
+                                            <small>10 minuten geleden</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex align-items-center mb-4">
+                                        <div class="flex-shrink-0">
+                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                        </div>
+                                        <div class="flex-grow-1 mb-lc-0 ps-3">
+                                            <p class="h6 text-primary mb-0">sonicblaze</p>
+                                            <small>10 minuten geleden</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex align-items-center mb-4">
+                                        <div class="flex-shrink-0">
+                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                        </div>
+                                        <div class="flex-grow-1 mb-lc-0 ps-3">
+                                            <p class="h6 text-primary mb-0">itselise</p>
+                                            <small>10 minuten geleden</small>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 mb-4">
+
+                    <div class="col-12 col-sm-6 mb-4">
                         <div class="card border-gray-300">
-                            <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
-                                <div class="d-block">
-                                    <div class="h6 fw-normal text-gray mb-2">Evenementen</div>
-                                    <h2 class="h3">0</h2>
-                                    <div class="small mt-2">
-                                        <span class="fw-bold">5 deze week</span>
-                                    </div>
-                                </div>
-                                <div class="d-block ms-auto">
-                                    <a href="#" class="btn btn-orange btn-sm">Alles tonen</a>
-                                </div>
-                            </div>
-                            <div class="card-body p-2">
-                                <table class="table table table-hover">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">Naam</th>
-                                        <th scope="col">Datum</th>
-                                        <th scope="col">Organisator</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <tr>
-                                            <th scope="row"><a href="#">Titel</a></th>
-                                            <th scope="row"><a href="#">29 dec om 12:00</a></th>
-                                            <th scope="row"><a href="#">raydevinlr</a></th>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
+                            <div class="card-body">
+                                <h2 class="h5 mb-4">Nieuwste leden</h2>
+                                <ul class="list-unstyled mb-lc-0">
+                                    <li class="d-flex align-items-center mb-4">
+                                        <div class="flex-shrink-0">
+                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                        </div>
+                                        <div class="flex-grow-1 mb-lc-0 ps-3">
+                                            <p class="h6 text-primary mb-0">raydevinlr</p>
+                                            <small>vandaag om 20:00</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex align-items-center mb-4">
+                                        <div class="flex-shrink-0">
+                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                        </div>
+                                        <div class="flex-grow-1 mb-lc-0 ps-3">
+                                            <p class="h6 text-primary mb-0">wendytjeeislief</p>
+                                            <small>gisteren om 20:00</small>
+                                        </div>
+                                    </li>
+                                    <li class="d-flex align-items-center mb-4">
+                                        <div class="flex-shrink-0">
+                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                        </div>
+                                        <div class="flex-grow-1 mb-lc-0 ps-3">
+                                            <p class="h6 text-primary mb-0">--willow--</p>
+                                            <small>2 weken geleden</small>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

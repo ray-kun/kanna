@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\admin\user;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\StoreArticleRequest;
 use App\Models\admin\Article;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -19,7 +21,7 @@ class UserArticleController extends Controller
     {
         $articles = Article::where('user_id', Auth::id())->latest()->get();
 
-        return view(get_admin_name().'.articles.user.index', ['articles' => $articles]);
+        return view('admin.user.articles.index', ['articles' => $articles]);
     }
 
     /**
@@ -27,9 +29,9 @@ class UserArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('admin.user.articles.create');
     }
 
     /**
@@ -38,9 +40,19 @@ class UserArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request): RedirectResponse
     {
-        //
+        $article = Article::make($request->validated());
+
+        $article->user_id = Auth::id();
+
+        $article->updated_by = Auth::id();
+
+        $article->status = 1;
+
+        $article->save();
+
+        return redirect()->route('admin.articles.user.index')->with('status', 'success');
     }
 
     /**
@@ -49,9 +61,9 @@ class UserArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Article $article): View
     {
-        //
+        return view('admin.user.articles.show', ['article' => $article]);
     }
 
     /**
