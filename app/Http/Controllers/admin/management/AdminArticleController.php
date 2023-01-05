@@ -106,7 +106,7 @@ class AdminArticleController extends Controller
 
     public function overview(): View
     {
-        $articles = Article::latest()->get();
+        $articles = Article::where('status', '=', 1)->get();
 
         return view('admin.management.articles.overview', ['articles' => $articles]);
     }
