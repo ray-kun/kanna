@@ -22,8 +22,8 @@ return [
     | Application Admin Name
     |--------------------------------------------------------------------------
     |
-    | This value is the name of your application's admin. This value is used when the
-    | framework needs to place the application's admin name in a notification or
+    | This value is the name of your application's eendenportaal. This value is used when the
+    | framework needs to place the application's eendenportaal name in a notification or
     | any other location as required by the application or its packages.
     |
     */

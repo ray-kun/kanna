@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin\management;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\ApproveArticleRequest;
 use App\Http\Requests\admin\EditArticleRequest;
 use App\Http\Requests\admin\StoreArticleRequest;
 use App\Models\admin\Article;
@@ -21,7 +22,7 @@ class AdminArticleController extends Controller
     {
         $articles = Article::latest()->get();
 
-        return view('admin.management.articles.index',
+        return view('eendenportaal.management.articles.index',
             ['articles' => $articles]);
     }
 
@@ -32,7 +33,7 @@ class AdminArticleController extends Controller
      */
     public function create(): View
     {
-        return view('admin.user.articles.create');
+        return view('eendenportaal.user.articles.create');
     }
 
     /**
@@ -53,7 +54,7 @@ class AdminArticleController extends Controller
 
         $article->save();
 
-        return redirect()->route('admin.articles.index')->with('status', 'success');
+        return redirect()->route('eendenportaal.articles.index')->with('status', 'success');
     }
 
     /**
@@ -64,7 +65,7 @@ class AdminArticleController extends Controller
      */
     public function show(Article $article): View
     {
-        return view('admin.management.articles.show', ['article' => $article]);
+        return view('eendenportaal.management.articles.show', ['article' => $article]);
     }
 
     /**
@@ -75,7 +76,7 @@ class AdminArticleController extends Controller
      */
     public function edit(Article $article): View
     {
-        return view('admin.articles.edit', ['article' => $article]);
+        return view('eendenportaal.articles.edit', ['article' => $article]);
     }
 
     /**
@@ -90,7 +91,7 @@ class AdminArticleController extends Controller
 
         $article->update($request->validated());
 
-        return redirect()->route('admin.articles.index')->with('status', 'edit_success');
+        return redirect()->route('eendenportaal.articles.index')->with('status', 'edit_success');
     }
 
     /**
@@ -108,6 +109,17 @@ class AdminArticleController extends Controller
     {
         $articles = Article::where('status', '=', 1)->get();
 
-        return view('admin.management.articles.overview', ['articles' => $articles]);
+        return view('eendenportaal.management.articles.overview', ['articles' => $articles]);
+    }
+
+    public function approve(ApproveArticleRequest $request, Article $article): RedirectResponse
+    {
+        $article->update($request->validated());
+
+        if($request->input('status') > 2) {
+            return redirect()->route('eendenportaal.articles.management.overview')->with('status', 'article_approved');
+        }
+
+        return redirect()->route('eendenportaal.articles.management.overview')->with('status', 'article_denied');
     }
 }

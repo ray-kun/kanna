@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('eendenportaal.layouts.master')
 
 @section('title')
     Dashboard
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('admin.partials.sidenav')
+            @include('eendenportaal.partials.sidenav')
 
             <div class="col-12 col-lg-8">
                 <div class="col-12 col-sm-12 mb-4">
@@ -22,7 +22,8 @@
                                     </div>
                                 </div>
                                 <div class="col-4 align-self-center">
-                                    <img src="{{ asset('assets/images/undraw_experience_design_re_ca7l.svg') }}" alt="Customer Support" class="img-fluid illustration-img">
+                                    <img src="{{ asset('assets/images/undraw_experience_design_re_ca7l.svg') }}"
+                                         alt="Customer Support" class="img-fluid illustration-img">
                                 </div>
                             </div>
                         </div>
@@ -33,7 +34,8 @@
                     <div class="col-12 col-sm-6 mb-4">
                         <div class="card border-gray-300">
                             <div class="card-body d-block d-md-flex align-items-center">
-                                <div class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
+                                <div
+                                    class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
                                     <i class="fa-solid fa-users fa-2xl"></i>
                                 </div>
                                 <div>
@@ -49,7 +51,8 @@
                     <div class="col-12 col-sm-6 mb-4">
                         <div class="card border-gray-300">
                             <div class="card-body d-block d-md-flex align-items-center">
-                                <div class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
+                                <div
+                                    class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
                                     <i class="fa-solid fa-piggy-bank fa-2xl"></i>
                                 </div>
 
@@ -66,7 +69,8 @@
                     <div class="col-12 col-sm-6 mb-4">
                         <div class="card border-gray-300">
                             <div class="card-body d-block d-md-flex align-items-center">
-                                <div class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
+                                <div
+                                    class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
                                     <i class="fa-solid fa-photo-film fa-2xl"></i>
                                 </div>
 
@@ -83,7 +87,8 @@
                     <div class="col-12 col-sm-6 mb-4">
                         <div class="card border-gray-300">
                             <div class="card-body d-block d-md-flex align-items-center">
-                                <div class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
+                                <div
+                                    class="icon icon-shape icon-md icon-shape-primary rounded-circle me-3 mb-4 mb-md-0">
                                     <i class="fa-solid fa-star fa-2xl"></i>
                                 </div>
 
@@ -104,7 +109,8 @@
                                 <ul class="list-unstyled mb-lc-0">
                                     <li class="d-flex align-items-center mb-4">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                            <img class="rounded-circle" style="width: 50px;"
+                                                 src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
                                         </div>
                                         <div class="flex-grow-1 mb-lc-0 ps-3">
                                             <p class="h6 text-primary mb-0">raydevinlr</p>
@@ -113,7 +119,8 @@
                                     </li>
                                     <li class="d-flex align-items-center mb-4">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                            <img class="rounded-circle" style="width: 50px;"
+                                                 src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
                                         </div>
                                         <div class="flex-grow-1 mb-lc-0 ps-3">
                                             <p class="h6 text-primary mb-0">sonicblaze</p>
@@ -122,7 +129,8 @@
                                     </li>
                                     <li class="d-flex align-items-center mb-4">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                            <img class="rounded-circle" style="width: 50px;"
+                                                 src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
                                         </div>
                                         <div class="flex-grow-1 mb-lc-0 ps-3">
                                             <p class="h6 text-primary mb-0">itselise</p>
@@ -141,7 +149,8 @@
                                 <ul class="list-unstyled mb-lc-0">
                                     <li class="d-flex align-items-center mb-4">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                            <img class="rounded-circle" style="width: 50px;"
+                                                 src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
                                         </div>
                                         <div class="flex-grow-1 mb-lc-0 ps-3">
                                             <p class="h6 text-primary mb-0">raydevinlr</p>
@@ -150,7 +159,8 @@
                                     </li>
                                     <li class="d-flex align-items-center mb-4">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                            <img class="rounded-circle" style="width: 50px;"
+                                                 src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
                                         </div>
                                         <div class="flex-grow-1 mb-lc-0 ps-3">
                                             <p class="h6 text-primary mb-0">wendytjeeislief</p>
@@ -159,7 +169,8 @@
                                     </li>
                                     <li class="d-flex align-items-center mb-4">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded-circle" style="width: 50px;" src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
+                                            <img class="rounded-circle" style="width: 50px;"
+                                                 src="https://pbs.twimg.com/media/DTsgGf-XkAEW1nJ.jpg" alt="Raymond">
                                         </div>
                                         <div class="flex-grow-1 mb-lc-0 ps-3">
                                             <p class="h6 text-primary mb-0">--willow--</p>
@@ -171,14 +182,14 @@
                         </div>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-12 mb-4">
                         <div class="card border-gray-300">
                             <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
                                 <div class="d-block">
-                                    <div class="h6 fw-normal text-gray mb-2">Kijken wat we ermee doen</div>
+                                    <div class="h6 fw-normal text-gray mb-2">Mijn artikelen</div>
                                     <h2 class="h3">0</h2>
                                     <div class="small mt-2">
-                                        <span class="text-success fw-bold">0 totaal</span>
+                                        <span class="text-success fw-bold">0 goedgekeurd</span>
                                     </div>
                                 </div>
                                 <div class="d-flex ms-auto">
@@ -190,18 +201,56 @@
                                 <table class="table table-hover">
                                     <thead>
                                     <tr>
-                                        <th scope="col">-</th>
-                                        <th scope="col">-</th>
-                                        <th scope="col">-</th>
-                                        <th scope="col">-</th>
+                                        <th scope="col">Titel</th>
+                                        <th scope="col">Categorie</th>
+                                        <th scope="col">Geplaatst op</th>
+                                        <th scope="col">Status</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <th scope="row">-</th>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
+                                        <th scope="row">Dit is een titel</th>
+                                        <td>1</td>
+                                        <td>6 jan 2022</td>
+                                        <td>1</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 mb-4">
+                        <div class="card border-gray-300">
+                            <div class="card-body d-flex flex-row align-items-center flex-0 border-bottom">
+                                <div class="d-block">
+                                    <div class="h6 fw-normal text-gray mb-2">Mijn evenementen</div>
+                                    <h2 class="h3">0</h2>
+                                    <div class="small mt-2">
+                                        <span class="text-success fw-bold">0 goedgekeurd</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex ms-auto">
+                                    <a href="#" class="btn btn-orange btn-sm me-3">Alles tonen</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body p-2">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">Naam</th>
+                                        <th scope="col">Datum en tijd</th>
+                                        <th scope="col">Geplaatst op</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Stoelendans</th>
+                                        <td>6 jan 2022 om 18:00</td>
+                                        <td>6 jan 2022</td>
+                                        <td>1</td>
                                     </tr>
                                     </tbody>
                                 </table>

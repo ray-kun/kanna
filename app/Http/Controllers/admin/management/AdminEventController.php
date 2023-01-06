@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\admin\management;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\ApproveEventRequest;
 use App\Http\Requests\admin\StoreEventRequest;
+use App\Models\admin\Article;
 use App\Models\admin\Event;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -21,7 +23,7 @@ class AdminEventController extends Controller
     {
         $events = Event::latest()->get();
 
-        return view(get_admin_name().'.events.index', ['events' => $events]);
+        return view('eendenportaal.management.events.index', ['events' => $events]);
     }
 
     /**
@@ -31,7 +33,7 @@ class AdminEventController extends Controller
      */
     public function create(): View
     {
-        return view(get_admin_name().'.events.create');
+        return view('eendenportaal.management.events.create');
     }
 
     /**
@@ -52,7 +54,7 @@ class AdminEventController extends Controller
 
         $event->save();
 
-        return redirect()->route(get_admin_name().'.events.index')->with('status', 'success');
+        return redirect()->route('eendenportaal.management.events.index')->with('status', 'success');
     }
 
     /**
@@ -61,9 +63,9 @@ class AdminEventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Event $event): View
     {
-        abort(404);
+        return view('eendenportaal.management.events.show', ['event' => $event]);
     }
 
     /**
@@ -100,16 +102,21 @@ class AdminEventController extends Controller
         //
     }
 
-    /**
-     * @throws \Exception
-     */
-    public function schedule()
+    public function overview(): View
     {
-        $times = get_time_slot('60', '12:00AM', '11:00PM');
+        $events = Event::where('status', '=', 1)->get();
 
-        dd($times);
-
-        return view(get_admin_name().'.events.schedule');
+        return view('eendenportaal.management.events.overview', ['events' => $events]);
     }
 
+    public function approve(ApproveEventRequest $request, Event $event): RedirectResponse
+    {
+        $event->update($request->validated());
+
+        if($request->input('status') > 2) {
+            return redirect()->route('eendenportaal.events.management.overview')->with('status', 'event_approved');
+        }
+
+        return redirect()->route('eendenportaal.events.management.overview')->with('status', 'event_denied');
+    }
 }

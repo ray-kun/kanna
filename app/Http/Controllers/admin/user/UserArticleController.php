@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin\user;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\EditArticleRequest;
 use App\Http\Requests\admin\StoreArticleRequest;
 use App\Models\admin\Article;
 use Illuminate\Http\RedirectResponse;
@@ -21,7 +22,7 @@ class UserArticleController extends Controller
     {
         $articles = Article::where('user_id', Auth::id())->latest()->get();
 
-        return view('admin.user.articles.index', ['articles' => $articles]);
+        return view('eendenportaal.user.articles.index', ['articles' => $articles]);
     }
 
     /**
@@ -31,7 +32,7 @@ class UserArticleController extends Controller
      */
     public function create(): View
     {
-        return view('admin.user.articles.create');
+        return view('eendenportaal.user.articles.create');
     }
 
     /**
@@ -52,7 +53,7 @@ class UserArticleController extends Controller
 
         $article->save();
 
-        return redirect()->route('admin.articles.user.index')->with('status', 'success');
+        return redirect()->route('eendenportaal.articles.user.index')->with('status', 'success');
     }
 
     /**
@@ -63,7 +64,7 @@ class UserArticleController extends Controller
      */
     public function show(Article $article): View
     {
-        return view('admin.user.articles.show', ['article' => $article]);
+        return view('eendenportaal.user.articles.show', ['article' => $article]);
     }
 
     /**
@@ -72,9 +73,9 @@ class UserArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Article $article): View
     {
-        //
+        return view('eendenportaal.user.articles.edit', ['article' => $article]);
     }
 
     /**
@@ -84,9 +85,11 @@ class UserArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EditArticleRequest $request, Article $article): RedirectResponse
     {
-        //
+        $article->update($request->validated());
+
+        return redirect()->route('eendenportaal.articles.user.index')->with('status', 'edit_success');
     }
 
     /**
@@ -98,5 +101,12 @@ class UserArticleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function denied(): View
+    {
+        $articles = Article::where('status', '=', 2)->where('user_id', Auth::id())->latest()->get();
+
+        return view('eendenportaal.user.articles.denied', ['articles' => $articles]);
     }
 }

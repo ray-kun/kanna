@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('eendenportaal.layouts.master')
 
 @section('title')
     Nieuwsberichten
@@ -8,15 +8,17 @@
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('admin.partials.sidenav')
+            @include('eendenportaal.partials.sidenav')
             <div class="col-12 col-lg-8">
                 <div class="row justify-content-center">
                     <div class="col-12">
 
                         @if(session('status') === 'success')
                             <div class="alert alert-success" id="alert-success" role="alert">
-                                <h4 class="alert-heading">Nieuwsbericht is toegevoegd <i class="fa-solid fa-party-horn fa-l"></i> </h4>
-                                <p>Kwak-tas-tisch, je artikel is toegevoegd en moet nog goedgekeurd worden door een nieuwsbeheerder</p>
+                                <h4 class="alert-heading">Nieuwsbericht is toegevoegd <i
+                                        class="fa-solid fa-party-horn fa-l"></i></h4>
+                                <p>Kwak-tas-tisch, je artikel is toegevoegd en moet nog goedgekeurd worden door een
+                                    nieuwsbeheerder</p>
                             </div>
                         @elseif(session('status') === 'failed')
                             <div class="alert alert-success" role="alert">
@@ -30,19 +32,43 @@
 
 
                         <div class="d-grid">
-                            <a href="{{ route('admin.articles.user.create') }}" class="btn btn-outline-secondary mb-4 py-3">
+                            <a href="{{ route('eendenportaal.articles.user.create') }}"
+                               class="btn btn-outline-secondary mb-4 py-3">
                                 <span class="me-2"><span class="fas fa-plus"></span></span>Nieuwe artikel toevoegen
                             </a>
                         </div>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-12">
+
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
+                            <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+                        </div>
+
                         @foreach($articles as $article)
                             <div class="card border-gray-300 mb-4">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-12 col-lg-6 col-xl-4">
                                         <a href="#">
-                                            <img src="https://picsum.photos/700/450" alt="Thumbnail nieuwstitel" class="card-img p-2 rounded-xl">
+                                            <img src="https://picsum.photos/700/450" alt="Thumbnail nieuwstitel"
+                                                 class="card-img p-2 rounded-xl">
                                         </a>
                                     </div>
                                     <div class="col-12 col-lg-6 col-xl-8">
@@ -51,21 +77,25 @@
                                                 <div class="col text-left">
                                                     <ul class="list-group mb-0">
                                                         <li class="list-group-item border-0 small p-0">
-                                                            <i class="fa-solid fa-calendar me-1"></i> Geplaatst op {{ $article->created_at }}
+                                                            <i class="fa-solid fa-calendar me-1"></i> Geplaatst
+                                                            op {{ $article->created_at }}
                                                         </li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col text-right">
                                                     <div class="btn-group">
-                                                        <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <button
+                                                            class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0"
+                                                            data-bs-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
                                                             <span class="icon icon-sm">
                                                                 <span class="fas fa-ellipsis-h icon-secondary"></span>
                                                             </span><span class="sr-only">Toggle Dropdown</span>
                                                         </button>
-
                                                         <div class="dropdown-menu py-0">
-                                                            <a class="dropdown-item rounded-top" href="{{ route('admin.articles.user.show', $article) }}">
+                                                            <a class="dropdown-item rounded-top"
+                                                               href="{{ route('eendenportaal.articles.user.show', $article) }}">
                                                                 <i class="fa-solid fa-eye"></i> Bekijk artikel</a>
                                                             <a class="dropdown-item" href="#">
                                                                 <i class="fa-solid fa-pen-to-square"></i> Bewerken
@@ -76,7 +106,8 @@
                                                                     @method('DELETE')
                                                                     @csrf
                                                                     <button type="submit" class="btn-del text-danger">
-                                                                        <span class="fa fa-trash me-2" aria-hidden="true"></span> Verwijderen
+                                                                        <span class="fa fa-trash me-2"
+                                                                              aria-hidden="true"></span> Verwijderen
                                                                     </button>
                                                                 </a>
                                                             </form>
@@ -89,10 +120,11 @@
                                                 <p>{{ $article->short_description }}</p>
                                             </a>
                                             <div class="col d-flex ps-0">
-                                                <span @class(['font-small me-3', 'text-success' => 1, 'text-danger' => !1])>
-                                                    <i @class(['fa-solid me-1', 'fa-circle-check' => 1, 'fa-circle-xmark' => !1])></i>
-                                                   Actief
+                                                <span @class(['font-small me-3', 'text-muted' => $article->status == 1, 'text-danger' => $article->status == 2, 'text-success' => $article->status == 3,])>
+                                                    <i @class(['fa-solid', 'fa-circle-minus' => $article->status == 1, 'fa-circle-xmark' => $article->status == 2, 'fa-circle-check' => $article->status == 3])></i>
+                                                    {{ get_status($article->status) }}
                                                 </span>
+
                                                 <span class="text-muted font-small me-3">
                                                    <i class="fa-solid fa-comments me-1"></i>
                                                     0 reactie(s)

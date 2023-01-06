@@ -20,6 +20,7 @@ class EditArticleRequest extends FormRequest
             'short_description' => ['required', 'string', 'max:255'],
             'category' => ['required', 'integer'],
             'body' => ['required', 'string'],
+            'status' => ['required']
         ];
     }
 }

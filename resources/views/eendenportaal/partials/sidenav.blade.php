@@ -12,42 +12,48 @@
         <nav class="sidebar">
             <ul class="nav flex-column" id="nav_accordion">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('admin.index') }}">Dashboard</a>
+                    <a class="nav-link" href="{{ route('eendenportaal.index') }}"><i class="fa-solid fa-gauge me-2"></i> Dashboard</a>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a class="nav-link" href="#">Beheerder <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-star me-2"></i> Beheerder <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route('admin.articles.management.index') }}">Alle artikelen</a></li>
-                        <li><a class="nav-link" href="{{ route('admin.articles.management.overview') }}">Nieuwsbericht beheer</a></li>
-                        <li><a class="nav-link" href="#">Categorieën beheren</a></li>
-                        <li><a class="nav-link" href="{{ route('admin.events.index') }}">Alle events</a></li>
-                        <li><a class="nav-link" href="#">Evenementen beheer</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.articles.management.index') }}">Alle artikelen</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.articles.management.overview') }}">Nieuwsbericht beheer</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.events.management.index') }}">Alle events</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.events.management.overview') }}">Evenementen beheer</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a class="nav-link" href="#">Nieuwsreporter <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-newspaper me-2"></i> Nieuwsreporter <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route('admin.articles.user.create') }}">Artikel plaatsen</a></li>
-                        <li><a class="nav-link" href="{{ route('admin.articles.user.index') }}">Mijn artikelen</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.articles.user.create') }}">Artikel plaatsen</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.articles.user.index') }}">Mijn artikelen</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.articles.user.denied') }}">Afgekeurde artikelen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a class="nav-link" href="#">Event <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-calendar-days me-2"></i> Event <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
-                        <li><a class="nav-link" href="{{ route('admin.events.create') }}">Event plaatsen</a></li>
-                        <li><a class="nav-link" href="{{ route('admin.events.user.index') }}">Mijn evenementen</a></li>
-                        <li><a class="nav-link" href="{{ route('admin.events.schedule') }}">Rooster</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.events.user.create') }}">Event plaatsen</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.events.user.index') }}">Mijn evenementen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a class="nav-link" href="#">Moderatie <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-palette me-2"></i> Pixelaar <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <ul class="submenu collapse">
+                        <li><a class="nav-link" href="#">Project uploaden</a></li>
+                        <li><a class="nav-link" href="#">Mijn projecten</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-submenu">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-shield-halved me-2"></i> Moderatie <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="#">Gebruiker verbannen</a></li>
                         <li><a class="nav-link" href="#">IP ban</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a class="nav-link" href="#">Developer tools <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-screwdriver-wrench me-2"></i> Developer tools <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="#">Website instellingen</a></li>
                         <li><a class="nav-link" href="#">Thema veranderen</a></li>
@@ -55,7 +61,7 @@
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
-                    <a class="nav-link" href="#">Logs <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-receipt me-2"></i> Logs <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="#">Profiel logs</a></li>
                         <li><a class="nav-link" href="#">Gastenboek logs</a></li>

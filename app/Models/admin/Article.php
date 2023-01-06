@@ -17,6 +17,7 @@ class Article extends Model
         'short_description',
         'category',
         'body',
+        'status',
     ];
 
     public function user(): BelongsTo

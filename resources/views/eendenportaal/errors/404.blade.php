@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('eendenportaal.layouts.master')
 
 @section('title')
     404 niet gevonden
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('admin.partials.sidenav')
+            @include('eendenportaal.partials.sidenav')
 
             <div class="col-12 col-lg-8">
                 <div class="col-12 col-sm-12 mb-4">
@@ -18,11 +18,13 @@
                                 <div class="col-8">
                                     <div class="illustration-text p-3 m-1">
                                         <h4 class="illustration-text">404 Niet gevonden</h4>
-                                        <p class="mb-0">Alle eendjes nog aan deze is niet gevonden in onze portaal toe de pagina die je zocht is niet gevonden!</p>
+                                        <p class="mb-0">Alle eendjes nog aan deze is niet gevonden in onze portaal toe
+                                            de pagina die je zocht is niet gevonden!</p>
                                     </div>
                                 </div>
                                 <div class="col-4 align-self-center">
-                                    <img src="{{ asset('assets/images/undraw_experience_design_re_ca7l.svg') }}" alt="Customer Support" class="img-fluid illustration-img">
+                                    <img src="{{ asset('assets/images/undraw_experience_design_re_ca7l.svg') }}"
+                                         alt="Customer Support" class="img-fluid illustration-img">
                                 </div>
                             </div>
                         </div>

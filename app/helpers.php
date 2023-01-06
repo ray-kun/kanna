@@ -1,6 +1,7 @@
 <?php
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 
 if (!function_exists('get_admin_name')) {
     function get_admin_name(): string
@@ -41,5 +42,27 @@ if (!function_exists('get_time_slot')) {
             }
         }
         return $time;
+    }
+}
+
+if (!function_exists('get_status')) {
+    function get_status(int $status): string
+    {
+        switch ($status) {
+            case 0:
+                $status = null;
+                break;
+            case 1:
+                $status = 'Nog niet beoordeeld';
+                break;
+            case 2:
+                $status = 'Afgekeurd';
+                break;
+            case 3:
+                $status = 'Actief';
+                break;
+        }
+
+        return $status;
     }
 }

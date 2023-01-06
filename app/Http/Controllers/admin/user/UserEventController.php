@@ -19,7 +19,7 @@ class UserEventController extends Controller
     {
         $events = Event::where('user_id', Auth::id())->latest()->get();
 
-        return view(get_admin_name().'.events.user.index', ['events' => $events]);
+        return view('eendenportaal.user.events.index', ['events' => $events]);
     }
     /**
      * Show the form for creating a new resource.

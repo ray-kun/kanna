@@ -29,6 +29,10 @@ Route::get('/', function () {
     return view('site.index');
 })->name('homepage');
 
+Route::fallback(function(){
+   abort(404);
+});
+
 Route::get('habboducket/team', [TeamController::class, 'index'])->name('habboducket-team');
 
 Route::get('habboducket/vacancies', [VacancyController::class, 'index'])->name('habboducket-vacancies');
@@ -54,13 +58,16 @@ Route::get('account/shop', [ShopController::class, 'index'])->name('account.shop
 
 Route::get('profile/{username}', [ProfileController::class, 'show'])->name('profile.user');
 
-Route::middleware('can:admin')->name('admin.')->group(function () {
+Route::middleware('can:eendenportaal')->name('eendenportaal.')->group(function () {
 
     Route::get('/eendenportaal', function() {
-        return view('admin.index');
+        return view('eendenportaal.index');
     })->name('index');
 
+    // Management Articles
     Route::get('eendenportaal/beheer/artikelen/overzicht', [AdminArticleController::class, 'overview'])->name('articles.management.overview');
+    Route::get('eendenportaal/beheer/artikelen/goedkeuren', [AdminArticleController::class, 'approve'])->name('articles.management.approve');
+    Route::put('eendenportaal/beheer/artikelen/goedkeuren/{article}', [AdminArticleController::class, 'approve'])->name('articles.management.approve');
 
     Route::resource('eendenportaal/beheer/artikelen', AdminArticleController::class)->names([
         'index' => 'articles.management.index',
@@ -73,28 +80,44 @@ Route::middleware('can:admin')->name('admin.')->group(function () {
         'artikelen' => 'article'
     ]);
 
-    Route::get('eendenportaal/evenementen/rooster', [AdminEventController::class, 'schedule'])->name('events.schedule');
+    // Management Events
+    Route::get('eendenportaal/beheer/evenementen/overzicht', [AdminEventController::class, 'overview'])->name('events.management.overview');
+    Route::get('eendenportaal/beheer/evenementen/goedkeuren', [AdminEventController::class, 'approve'])->name('events.management.approve');
+    Route::put('eendenportaal/beheer/evenementen/goedkeuren/{event}', [AdminEventController::class, 'approve'])->name('events.management.approve');
 
-    Route::resource('eendenportaal/evenementen', AdminEventController::class)->names([
-        'index' => 'events.index',
-        'create' => 'events.create',
-        'store' => 'events.store',
+    Route::resource('eendenportaal/beheer/evenementen', AdminEventController::class)->names([
+        'index' => 'events.management.index',
+        'create' => 'events.management.create',
+        'store' => 'events.management.store',
+        'show' => 'events.management.show',
+        'edit' => 'events.management.edit',
+        'update' => 'events.management.update',
+    ])->parameters([
+        'evenementen' => 'event'
     ]);
 
+    // User Articles
+    Route::get('eendenportaal/mijn/artikelen/afgekeurde', [UserArticleController::class, 'denied'])->name('articles.user.denied');
 
     Route::resource('eendenportaal/mijn/artikelen', UserArticleController::class)->names([
         'index' => 'articles.user.index',
         'create' => 'articles.user.create',
         'store' => 'articles.user.store',
         'show' => 'articles.user.show',
-        'edit' => 'articles.edit',
-        'update' => 'articles.update',
+        'edit' => 'articles.user.edit',
+        'update' => 'articles.user.update',
     ])->parameters([
         'artikelen' => 'article'
     ]);
 
+    // User Events
     Route::resource('eendenportaal/mijn/evenementen', UserEventController::class)->names([
         'index' => 'events.user.index',
+        'create' => 'events.user.create',
+        'store' => 'events.user.store',
+        'show' => 'events.user.show',
+        'edit' => 'events.user.edit',
+        'update' => 'events.user.update',
     ])->parameters([
         'evenement' => 'event'
     ]);

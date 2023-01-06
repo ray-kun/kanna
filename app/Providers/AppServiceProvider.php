@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        Gate::define('admin', function (User $user) {
+        Gate::define('eendenportaal', function (User $user) {
             return $user->is_admin === 1 ? Response::allow() : Response::denyAsNotFound();
         });
 

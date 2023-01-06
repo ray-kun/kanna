@@ -2,14 +2,14 @@
     <nav id="navbar-main" aria-label="Primary navigation" class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-transparent navbar-theme-secondary headroom--not-bottom headroom--top">
         <div class="container position-relative">
             <a class="navbar-brand me-lg-5" href="#">
-                <img class="navbar-brand-light" src="{{ asset('admin/images/app-logo.svg') }}" alt="Logo dark">
+                <img class="navbar-brand-light" src="{{ asset('eendenportaal/images/app-logo.svg') }}" alt="Logo dark">
             </a>
             <div class="navbar-collapse collapse me-auto" id="navbar_global">
                 <div class="navbar-collapse-header">
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="#">
-                                <img class="navbar-brand-light" src="{{ asset('admin/images/app-logo.svg') }}" alt="Logo dark">
+                                <img class="navbar-brand-light" src="{{ asset('eendenportaal/images/app-logo.svg') }}" alt="Logo dark">
                             </a>
                         </div>
 

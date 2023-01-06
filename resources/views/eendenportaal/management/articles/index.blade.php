@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('eendenportaal.layouts.master')
 
 @section('title')
     Nieuwsberichten
@@ -8,14 +8,16 @@
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('admin.partials.sidenav')
+            @include('eendenportaal.partials.sidenav')
 
             <div class="col-12 col-lg-8">
 
                 @if(session('status') === 'success')
                     <div class="alert alert-success" id="alert-success" role="alert">
-                        <h4 class="alert-heading">Nieuwsbericht is toegevoegd <i class="fa-solid fa-party-horn fa-l"></i> </h4>
-                        <p>Kwak-tas-tisch, je artikel is toegevoegd en moet nog goedgekeurd worden door een nieuwsbeheerder</p>
+                        <h4 class="alert-heading">Nieuwsbericht is toegevoegd <i
+                                class="fa-solid fa-party-horn fa-l"></i></h4>
+                        <p>Kwak-tas-tisch, je artikel is toegevoegd en moet nog goedgekeurd worden door een
+                            nieuwsbeheerder</p>
                     </div>
                 @elseif(session('status') === 'failed')
                     <div class="alert alert-success" role="alert">
@@ -57,9 +59,12 @@
                                             <td>{{ $article->created_at }}</td>
                                             <td>{{ $article->status }}</td>
                                             <td>
-                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i></a>
-                                                <a href="#" class="btn btn-primary btn-sm"><i class="fa-solid fa-pen-to-square"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></a>
+                                                <a href="#" class="btn btn-primary btn-sm"><i
+                                                        class="fa-solid fa-eye"></i></a>
+                                                <a href="#" class="btn btn-primary btn-sm"><i
+                                                        class="fa-solid fa-pen-to-square"></i></a>
+                                                <a href="#" class="btn btn-danger btn-sm"><i
+                                                        class="fa-solid fa-trash-can"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach

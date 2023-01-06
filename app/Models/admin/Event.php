@@ -21,6 +21,7 @@ class Event extends Model
         'time_from',
         'time_till',
         'description',
+        'status',
     ];
 
     public function user(): BelongsTo

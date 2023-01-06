@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('eendenportaal.layouts.master')
 
 @section('title')
     {{ $article->title }}
@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('admin.partials.sidenav')
+            @include('eendenportaal.partials.sidenav')
             <div class="col-12 col-lg-8">
                 <div class="row">
                     <div class="col-8 mb-4">
