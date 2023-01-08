@@ -994,3 +994,75 @@ p#stats {
     border: 1px solid #d4d6d5;
     padding: 5px;
 }
+
+.nieuws-groen-groot {
+    width: 100%;
+    background: #F5F5F5;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.nieuws-groen-groot:hover {
+    -webkit-box-shadow: 0 0 6px 2px #E5FDFC  ;
+    -moz-box-shadow: 0 0 6px 2px #E5FDFC  ;
+    box-shadow: 0 0 6px 2px #E5FDFC  ;
+}
+
+.nieuws-groen-groot .nieuws-topstory {
+    border-radius: 3px;
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    float:left;
+    background-position: right;
+}
+
+.nieuws-groen-groot .nieuws-title {
+    border-radius: 3px;
+    min-height: 65px;
+    max-height:200px;
+    max-width: 500px;
+    min-width: 200px;
+    overflow: hidden;
+    padding: 20px 3px 3px 3px;
+    font-size:14px;
+    font-weight:normal;
+    margin: 5px;
+    color: #5D6B5D;
+    float:left;
+    line-height: 18px;
+}
+
+.nieuws-right {
+    float: right;
+    padding: 15px;
+}
+
+.nieuws-right .auteur {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 11px;
+}
+
+.nieuws-groen-groot .button {
+    background: #F99624;
+    border-radius: 3px;
+    color: #ffffff;
+    padding: 10px 30px 10px 30px;
+    border: none;
+    box-shadow: inset 0 5px rgba(255, 255, 255, 0.2), inset 0 -5px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.2), 0 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-right: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+    float: right;
+    transition: 0.3s;
+}
+
+.nieuws-groen-groot .button:hover {
+    background: #e58f2c;
+}
+

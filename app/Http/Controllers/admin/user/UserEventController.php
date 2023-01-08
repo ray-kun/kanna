@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\admin\user;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\admin\StoreEventRequest;
 use App\Models\admin\Event;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -26,9 +28,9 @@ class UserEventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('eendenportaal.user.events.create');
     }
 
     /**
@@ -37,9 +39,19 @@ class UserEventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEventRequest $request): RedirectResponse
     {
-        //
+        $event = Event::make($request->validated());
+
+        $event->user_id = Auth::id();
+
+        $event->updated_by = Auth::id();
+
+        $event->status = 1;
+
+        $event->save();
+
+        return redirect()->route('eendenportaal.events.user.index')->with('status', 'success');
     }
 
     /**
@@ -85,5 +97,12 @@ class UserEventController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function denied(): View
+    {
+        $events = Event::where('status', '=', 2)->latest()->get();
+
+        return view('eendenportaal.user.events.denied', ['events' => $events]);
     }
 }

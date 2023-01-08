@@ -38,6 +38,7 @@ Route::get('habboducket/team', [TeamController::class, 'index'])->name('habboduc
 Route::get('habboducket/vacancies', [VacancyController::class, 'index'])->name('habboducket-vacancies');
 
 Route::get('news', [ArticleController::class, 'index'])->name('news');
+Route::get('news/{article}', [ArticleController::class, 'show'])->name('news.show');
 
 Route::get('account/login', [SessionController::class, 'create'])->name('account.login');
 Route::post('account/login', [SessionController::class, 'store'])->name('account.login');
@@ -111,6 +112,8 @@ Route::middleware('can:eendenportaal')->name('eendenportaal.')->group(function (
     ]);
 
     // User Events
+    Route::get('eendenportaal/mijn/evenementen/afgekeurde', [UserEventController::class, 'denied'])->name('events.user.denied');
+
     Route::resource('eendenportaal/mijn/evenementen', UserEventController::class)->names([
         'index' => 'events.user.index',
         'create' => 'events.user.create',

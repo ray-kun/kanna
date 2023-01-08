@@ -1,22 +1,24 @@
 @extends('eendenportaal.layouts.master')
 
 @section('title')
-    Mijn evenementen
+    Nieuwsberichten
 @endsection
 
 @section('content')
     <div class="container">
         <div class="row pt-5 pt-md-0">
 
-            @include('eendenportaal/partials/sidenav')
+            @include('eendenportaal.partials.sidenav')
             <div class="col-12 col-lg-8">
                 <div class="row justify-content-center">
                     <div class="col-12">
 
                         @if(session('status') === 'success')
                             <div class="alert alert-success" id="alert-success" role="alert">
-                                <h4 class="alert-heading">Evenement is toegevoegd <i class="fa-solid fa-party-horn fa-l"></i> </h4>
-                                <p>Kwak-tas-tisch, je evenement is toegevoegd en moet nog goedgekeurd worden door een eventbeheerder</p>
+                                <h4 class="alert-heading">Nieuwsbericht is toegevoegd <i
+                                        class="fa-solid fa-party-horn fa-l"></i></h4>
+                                <p>Kwak-tas-tisch, je artikel is toegevoegd en moet nog goedgekeurd worden door een
+                                    nieuwsbeheerder</p>
                             </div>
                         @elseif(session('status') === 'failed')
                             <div class="alert alert-success" role="alert">
@@ -28,12 +30,6 @@
                             </div>
                         @endif
 
-
-                        <div class="d-grid">
-                            <a href="{{ route('eendenportaal.events.user.create') }}" class="btn btn-outline-secondary mb-4 py-3">
-                                <span class="me-2"><span class="fas fa-plus"></span></span>Nieuwe event aanmaken
-                            </a>
-                        </div>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-12">
@@ -42,7 +38,8 @@
                                 <div class="row g-0 align-items-center">
                                     <div class="col-12 col-lg-6 col-xl-4">
                                         <a href="#">
-                                            <img src="https://picsum.photos/700/450" alt="Thumbnail nieuwstitel" class="card-img p-2 rounded-xl">
+                                            <img src="https://picsum.photos/700/450" alt="Thumbnail nieuwstitel"
+                                                 class="card-img p-2 rounded-xl">
                                         </a>
                                     </div>
                                     <div class="col-12 col-lg-6 col-xl-8">
@@ -51,32 +48,38 @@
                                                 <div class="col text-left">
                                                     <ul class="list-group mb-0">
                                                         <li class="list-group-item border-0 small p-0">
-                                                            <i class="fa-solid fa-calendar me-1"></i> {{ $event->date }}
+                                                            <i class="fa-solid fa-calendar me-1"></i> Geplaatst
+                                                            op {{ $event->created_at }}
                                                         </li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col text-right">
                                                     <div class="btn-group">
-                                                        <button class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <button
+                                                            class="btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0"
+                                                            data-bs-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
                                                             <span class="icon icon-sm">
                                                                 <span class="fas fa-ellipsis-h icon-secondary"></span>
                                                             </span><span class="sr-only">Toggle Dropdown</span>
                                                         </button>
 
                                                         <div class="dropdown-menu py-0">
-                                                            <a class="dropdown-item rounded-top" href="#">
-                                                                <i class="fa-solid fa-eye"></i> Bekijk</a>
-                                                            <a class="dropdown-item" href="#">
+                                                            <a class="dropdown-item rounded-top"
+                                                               href="{{ route('eendenportaal.events.user.show', $event) }}">
+                                                                <i class="fa-solid fa-eye"></i> Bekijk artikel</a>
+                                                            <a class="dropdown-item" href="{{ route('eendenportaal.events.user.edit', $event) }}">
                                                                 <i class="fa-solid fa-pen-to-square"></i> Bewerken
                                                             </a>
                                                             <form class="mb-0" method="POST"
-                                                                  action="#">
+                                                                  action="{{ route('eendenportaal.events.user.edit', $event) }}">
                                                                 <a class="dropdown-item text-danger rounded-bottom">
                                                                     @method('DELETE')
                                                                     @csrf
                                                                     <button type="submit" class="btn-del text-danger">
-                                                                        <span class="fa fa-trash me-2" aria-hidden="true"></span> Verwijderen
+                                                                        <span class="fa fa-trash me-2"
+                                                                              aria-hidden="true"></span> Verwijderen
                                                                     </button>
                                                                 </a>
                                                             </form>
@@ -86,7 +89,7 @@
                                             </div>
                                             <a href="#">
                                                 <h2 class="h5">{{ $event->title }}</h2>
-                                                <p>{{ 'van '.$event->time_from.' tot '.$event->time_till }}</p>
+                                                <p>{{ $event->short_description }}</p>
                                             </a>
                                             <div class="col d-flex ps-0">
                                                 <span @class(['font-small me-3', 'text-success' => 1, 'text-danger' => !1])>
@@ -94,8 +97,11 @@
                                                    Actief
                                                 </span>
                                                 <span class="text-muted font-small me-3">
-                                                    <i class="fa-solid fa-trophy-star me-1"></i>
-                                                    5 credits
+                                                   <i class="fa-solid fa-comments me-1"></i>
+                                                    0 reactie(s)
+                                                </span>
+                                                <span class="text-muted font-small me-3">
+                                                    <i class="fa-solid fa-filters me-1"></i> {{ $event->category }}
                                                 </span>
                                                 <a class="font-small text-dark" href="./messages.html">
                                                     <i class="fa-solid fa-user me-1"></i> {{ $event->user->username }}

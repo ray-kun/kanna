@@ -36,6 +36,7 @@
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="{{ route('eendenportaal.events.user.create') }}">Event plaatsen</a></li>
                         <li><a class="nav-link" href="{{ route('eendenportaal.events.user.index') }}">Mijn evenementen</a></li>
+                        <li><a class="nav-link" href="{{ route('eendenportaal.events.user.denied') }}">Afgekeurde evenementen</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">
@@ -43,6 +44,13 @@
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="#">Project uploaden</a></li>
                         <li><a class="nav-link" href="#">Mijn projecten</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-submenu">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping me-2"></i> Winkel <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <ul class="submenu collapse">
+                        <li><a class="nav-link" href="#">Item toevoegen</a></li>
+                        <li><a class="nav-link" href="#">Alle items</a></li>
                     </ul>
                 </li>
                 <li class="nav-item has-submenu">

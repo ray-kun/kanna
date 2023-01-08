@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\admin\Article;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -14,7 +15,9 @@ class ArticleController extends Controller
      */
     public function index(): View
     {
-        return view('site.news.index');
+        $articles = Article::where('status', '=', 3)->latest()->get();
+
+        return view('site.news.index', ['articles' => $articles]);
     }
 
     /**
@@ -44,9 +47,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Article $article): View
     {
-        //
+        return view('site.news.show', ['article' => $article]);
     }
 
     /**
