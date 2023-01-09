@@ -15,70 +15,24 @@
     @endif
 
     <div class="row">
-
-    <!--Profile Card 5-->
-    <div class="col-3 mt-4">
-        <div class="card profile-card-5">
-            <div class="card-img-block">
-                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                    <span class="badge bg-secondary float-end">Categorie</span>
-                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
+        @foreach($articles as $article)
+            <div class="col-3 mt-4">
+                <div class="card profile-card-5">
+                    <div class="card-img-block">
+                        <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
+                            <span class="badge bg-secondary float-end">{{ $article->category }}</span>
+                            <span class="badge bg-secondary float-end me-1">{{ $article->created_at }}</span>
+                        </div>
+                    </div>
+                    <a href="{{ route('news.show', $article) }}">
+                    <div class="card-body pt-0">
+                        <h5 class="card-title text-truncate">{{ $article->title }}</h5>
+                        <p class="card-text">{{ $article->short_description }}</p>
+                    </div>
+                    </a>
                 </div>
             </div>
-            <div class="card-body pt-0">
-                <h5 class="card-title text-truncate">We zijn eindelijk goed teruggekeerd</h5>
-                <p class="card-text">Tijd voor een feestje!</p>
-                <p><small>Geschreven door Ryuk</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-3 mt-4">
-        <div class="card profile-card-5">
-            <div class="card-img-block">
-                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                    <span class="badge bg-secondary float-end">Categorie</span>
-                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                </div>
-            </div>
-            <div class="card-body pt-0">
-                <h5 class="card-title text-truncate">Game heeft nieuwe meubels toegevoegd</h5>
-                <p class="card-text">Tijd voor een feestje!</p>
-                <p><small>Geschreven door Ryuk</small></p>
-
-            </div>
-        </div>
-    </div>
-    <div class="col-3 mt-4">
-        <div class="card profile-card-5">
-            <div class="card-img-block">
-                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                    <span class="badge bg-secondary float-end">Categorie</span>
-                    <span class="badge bg-secondary float-end me-1">29 nov 2022</span>
-                </div>
-            </div>
-            <div class="card-body pt-0">
-                <h5 class="card-title text-truncate">Dit is echt geweldig nieuws</h5>
-                <p class="card-text">Tijd voor een feestje!</p>
-                <p><small>Geschreven door Ryuk</small></p>
-            </div>
-        </div>
-    </div>
-    <div class="col-3 mt-4">
-        <div class="card profile-card-5">
-            <div class="card-img-block">
-                <div class="card-img-top" style="background-image: url('https://picsum.photos/500/500')">
-                    <span class="badge bg-secondary float-end">Categorie</span>
-                    <span class="badge bg-secondary float-end me-1">31 jan 2022</span>
-                </div>
-            </div>
-            <div class="card-body pt-0">
-                <h5 class="card-title text-truncate">Wij gaan in december open, geweldig!</h5>
-                <div class="author-img"></div>
-                <p class="card-text">Tijd voor een feestje!</p>
-                <p><small>Geschreven door Ryuk</small></p>
-            </div>
-        </div>
-    </div>
+        @endforeach
     </div>
 
     <div class="row">

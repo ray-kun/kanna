@@ -15,6 +15,17 @@
                     <a class="nav-link" href="{{ route('eendenportaal.index') }}"><i class="fa-solid fa-gauge me-2"></i> Dashboard</a>
                 </li>
                 <li class="nav-item has-submenu">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-key me-2"></i>Administrator <i class="fa-solid fa-caret-down ms-2"></i></a>
+                    <ul class="submenu collapse">
+                        <li><a class="nav-link" href="{{ route('eendenportaal.administrator.jobs.index') }}">Vacatures</a></li>
+                        <li><a class="nav-link" href="#">Sollicitaties</a></li>
+                        <li><a class="nav-link" href="#">Medewerkers</a></li>
+                        <li><a class="nav-link" href="#">Rollen</a></li>
+                        <li><a class="nav-link" href="#">Permissies</a></li>
+                        <li><a class="nav-link" href="#">Categorieen beheren</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item has-submenu">
                     <a class="nav-link" href="#"><i class="fa-solid fa-star me-2"></i> Beheerder <i class="fa-solid fa-caret-down ms-2"></i></a>
                     <ul class="submenu collapse">
                         <li><a class="nav-link" href="{{ route('eendenportaal.articles.management.index') }}">Alle artikelen</a></li>

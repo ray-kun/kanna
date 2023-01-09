@@ -16,7 +16,7 @@
                     </a>
                     <ul class="dropdown-menu fade-up">
                         <li><a class="dropdown-item" href="{{ route('habboducket-team') }}">Ons team</a></li>
-                        <li><a class="dropdown-item" href="{{ route('habboducket-vacancies') }}">Vacatures</a></li>
+                        <li><a class="dropdown-item" href="{{ route('habboducket-jobs') }}">Vacatures</a></li>
                         <li><a class="dropdown-item" href="#">Statistieken</a></li>
                         <li><a class="dropdown-item" href="#">Badges</a></li>
                         <li><a class="dropdown-item" href="#">Duckets</a></li>

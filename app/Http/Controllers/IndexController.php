@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Job;
+use App\Models\admin\Article;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class JobController extends Controller
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class JobController extends Controller
      */
     public function index(): View
     {
-        $jobs = Job::where('status', '>', 0)->latest()->get();
+        $articles = Article::where('status', '=', 3)->latest()->get()->take(4);
 
-        return view('site.habboducket.jobs.index', ['jobs' => $jobs]);
+        return view('site.index', ['articles' => $articles]);
     }
 
     /**
