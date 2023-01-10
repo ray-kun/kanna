@@ -46,20 +46,22 @@ Route::post('account/inloggen', [SessionController::class, 'store'])->name('acco
 Route::get('account/registreren', [RegisterController::class, 'create'])->name('account.register');
 Route::post('account/registreren', [RegisterController::class, 'store'])->name('account.register');
 
-Route::post('account/uitloggen', [SessionController::class, 'destroy'])->name('account.logout');
-
-Route::get('account/instellingen', [AccountController::class, 'index'])->name('account.settings');
-
-Route::get('account/instellingen/profiel', [ProfileController::class, 'create'])->name('account.settings.profile');
-
-Route::get('account/instellingen/wachtwoord', [AccountController::class, 'edit'])->name('account.settings.password');
-Route::post('account/instellingen/wachtwoord', [AccountController::class, 'update'])->name('account.settings.password');
-
-Route::get('account/winkel', [ShopController::class, 'index'])->name('account.shop');
-
 Route::get('profiel/{username}', [ProfileController::class, 'show'])->name('profile.user');
 
-Route::middleware('can:eendenportaal')->name('eendenportaal.')->group(function () {
+Route::middleware('auth')->group(function () {
+    Route::post('account/uitloggen', [SessionController::class, 'destroy'])->name('account.logout');
+
+    Route::get('account/instellingen', [AccountController::class, 'index'])->name('account.settings');
+
+    Route::get('account/instellingen/profiel', [ProfileController::class, 'create'])->name('account.settings.profile');
+
+    Route::get('account/instellingen/wachtwoord', [AccountController::class, 'edit'])->name('account.settings.password');
+    Route::post('account/instellingen/wachtwoord', [AccountController::class, 'update'])->name('account.settings.password');
+
+    Route::get('account/winkel', [ShopController::class, 'index'])->name('account.shop');
+});
+
+Route::name('eendenportaal.')->group(function () {
 
     Route::get('/eendenportaal', function() {
         return view('eendenportaal.index');
