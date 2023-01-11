@@ -5,7 +5,7 @@
                 <img src="https://i0.wp.com/tleliteracy.com/wp-content/uploads/2017/02/default-avatar.png" class="card-img-top rounded-circle border-white" alt="Bonnie Green Portrait">
             </div>
 
-            <span class="h5 mt-4">Goedemorgen, {{ \Illuminate\Support\Facades\Auth::user()->username }}!</span>
+            <span class="h5 mt-4">Goedemorgen, Administrator!</span>
             <span class="h6">Eigenaar</span>
         </div>
 
